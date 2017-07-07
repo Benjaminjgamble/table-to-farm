@@ -4,8 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var index = require('./server/routes/index');
+var users = require('./server/routes/users');
+// var products = require('./server/routes/products')
 
 var app = express();
 
@@ -20,8 +21,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/api', index);
+app.use('/api/users', users);
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
 })

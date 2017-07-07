@@ -1,10 +1,10 @@
 (function(){
-  console.log('landing.js is connected')
+  console.log('products.js is connected')
 
   angular.module('app')
-  .component('landing', {
+  .component('products', {
     controller: controller,
-    templateUrl: './scripts/landing.html'
+    templateUrl: './scripts/products/products.html'
   })
 
   controller.$inject = ['API_BASE_URL', '$http', '$state']
@@ -13,6 +13,12 @@
 
     vm.$onInit = function () {
       console.log('Inside controller on init function');
+      $http.get(`${baseUrl}/api/products`).then((products) => {
+        console.log(products.data);
+        vm.products = products.data
+      }).catch((err) => {
+        console.log(err);
+      })
     }
 
   }

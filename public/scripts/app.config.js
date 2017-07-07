@@ -8,10 +8,16 @@ console.log('in app.config');
     $stateProvider
 
     .state({
+      name: 'products',
+      url: '/products',
+      component: 'products'
+    })
+
+    .state({
       name: 'landing',
       url: '/',
       component: 'landing'
     })
 
   }
-}())
+})()
