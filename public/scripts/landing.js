@@ -32,5 +32,14 @@
       })
     }
 
+    vm.watsonRequest = function () {
+      let imageUrl = vm.image
+
+      $http.get(`https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=58b36d0709cc0552b000139d00d44d54babc25dd&url=${imageUrl}&version=2016-05-19`).then((result) => {
+        console.log(result);
+      }).catch((err) => {
+        console.log(err);
+      })
+    }
   }
 })()
