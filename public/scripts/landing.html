@@ -1,6 +1,17 @@
 <div class="container col-sm-6 col-sm-offset-3">
+
+  <img ng-src="{{$ctrl.image_url}}" alt="image_upload"/>
+  <form ng-submit="$ctrl.apiRequest()">
+    <div class="form-group">
+      <label for="product_image">File input</label>
+      <input type="file" id="image">
+      <p class="help-block">Upload an Image</p>
+      <button type="submit" name="button">Submit</button>
+    </div>
+  </form>
+
 <form ng-submit="$ctrl.postProduct()">
-  <div class="form-group">
+  <div class="form-group" hidden>
     <label for="product_image">File input</label>
     <input type="url" id="product_image" ng-model="$ctrl.productImage">
     <p class="help-block">Upload an Image</p>
@@ -29,11 +40,3 @@
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 </div>
-
-<form ng-submit="$ctrl.watsonRequest()">
-  <div class="form-group">
-    <label for="product_image">File input</label>
-    <input type="url" id="image" ng-model="$ctrl.image">
-    <p class="help-block">Upload an Image</p>
-  </div>
-</form>

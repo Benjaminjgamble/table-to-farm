@@ -1,5 +1,4 @@
 (function(){
-  console.log('landing.js is connected')
 
   angular.module('app')
   .component('landing', {
@@ -7,12 +6,12 @@
     templateUrl: './scripts/landing.html'
   })
 
-  controller.$inject = ['API_BASE_URL', '$http', '$state']
-  function controller (baseUrl, $http, $state){
+  controller.$inject = ['API_BASE_URL', '$http', '$state', '$scope']
+  function controller (baseUrl, $http, $state, $scope){
     const vm = this
+    vm.image_url = 'http://placehold.it/250/ffffff/000000'
 
     vm.$onInit = function () {
-      console.log('Inside landing controller on init function');
     }
 
     vm.postProduct = function () {
@@ -32,14 +31,25 @@
       })
     }
 
-    vm.watsonRequest = function () {
-      let imageUrl = vm.image
+    vm.apiRequest = function () {
+      const image = document.getElementById('image')
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        console.log(vm.image_url)
+        $http.post(`${baseUrl}/api/cloudinary`, {file: reader.result}).then((response) => {
+          console.log(response);
+        })
+        $scope.$apply(() => {
+          vm.image_url = event.target.result
+        })
+      }
+      reader.readAsDataURL(image.files[0])
 
-      $http.get(`https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=58b36d0709cc0552b000139d00d44d54babc25dd&url=${imageUrl}&version=2016-05-19`).then((result) => {
-        console.log(result);
-      }).catch((err) => {
-        console.log(err);
-      })
+      // $http.get(`https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=58b36d0709cc0552b000139d00d44d54babc25dd&url=${image}&version=2016-05-19`).then((result) => {
+      //   console.log(result);
+      // }).catch((err) => {
+      //   console.log(err);
+      // })
     }
   }
 })()
