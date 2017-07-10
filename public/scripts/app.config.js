@@ -14,9 +14,21 @@ console.log('in app.config');
     })
 
     .state({
-      name: 'landing',
-      url: '/',
-      component: 'landing'
+      name: 'farm',
+      url: '/farm',
+      component: 'farm.landing'
+    })
+
+    .state({
+      name: 'main',
+      url: '/main',
+      component: 'main'
+    })
+
+    .state({
+      name: 'signin',
+      url: '/signin',
+      component: 'signin'
     })
 
   }

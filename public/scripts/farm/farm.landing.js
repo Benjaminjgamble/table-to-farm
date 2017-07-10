@@ -1,9 +1,9 @@
 (function(){
 
   angular.module('app')
-  .component('landing', {
+  .component('farm.landing', {
     controller: controller,
-    templateUrl: './scripts/landing.html'
+    templateUrl: './scripts/farm/farm.landing.html'
   })
 
   controller.$inject = ['API_BASE_URL', '$http', '$state', '$scope']
@@ -11,7 +11,10 @@
     const vm = this
     vm.image_url = 'http://placehold.it/250/ffffff/000000'
 
+
+
     vm.$onInit = function () {
+
     }
 
     vm.postProduct = function () {
@@ -32,7 +35,7 @@
       })
     }
 
-    vm.apiRequest = function () {
+    vm.apiRequest = function (file) {
       const image = document.getElementById('image')
       const reader = new FileReader()
       reader.onload = (event) => {
@@ -55,8 +58,13 @@
         //   vm.image_url = event.target.result
         // })
       }
-      reader.readAsDataURL(image.files[0])
+      reader.readAsDataURL(file)
 
+    }
+
+    $scope.fileNameChanged = function (element) {
+      console.log('!!!', element.files[0])
+      vm.apiRequest(element.files[0])
     }
   }
 })()

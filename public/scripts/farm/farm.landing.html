@@ -1,0 +1,31 @@
+<div class="container col-sm-6 col-sm-offset-3">
+  <img id="thumbnail" ng-src="{{$ctrl.image_url}}" alt="image_upload"/>
+  <form ng-submit="$ctrl.postProduct()">
+    <div class="form-group">
+      <label for="product_image">Upload an Image</label>
+      <input onchange="angular.element(this).scope().fileNameChanged(this)" type="file" id="image">
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="$ctrl.season"> In Season?
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" placeholder="Description" ng-model="$ctrl.description">
+    </div>
+    <div class="form-group">
+      <label for="product_name">Product</label>
+      <input type="text" class="form-control" id="product_name" placeholder="Product Name" ng-model="$ctrl.productName">
+    </div>
+    <div class="form-group">
+      <label for="type">Type</label>
+      <input type="text" class="form-control" id="type" placeholder="Product Type" ng-model="$ctrl.type">
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="integer" class="form-control" id="price" placeholder="Price" ng-model="$ctrl.price">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
