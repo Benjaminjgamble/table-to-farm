@@ -19,10 +19,11 @@
         product_name: vm.productName,
         type: vm.type,
         in_season: vm.season,
-        image: vm.productImage,
+        image: vm.image_url,
         description: vm.description,
         price: vm.price
       }
+
       $http.post(`${baseUrl}/api/products`, newProduct).then((product) => {
         $state.go('products')
         console.log('this is the new product', product.data);
@@ -38,18 +39,24 @@
         console.log(vm.image_url)
         $http.post(`${baseUrl}/api/cloudinary`, {file: reader.result}).then((response) => {
           console.log(response);
+          let newImage = response.data.url
+          vm.image_url = newImage
+          $http.get(`https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=58b36d0709cc0552b000139d00d44d54babc25dd&url=${newImage}&version=2016-05-19`).then((result) => {
+            console.log('watson result', result);
+            let resArr = result.data.images[0].classifiers[0].classes
+            vm.productName = resArr[0].class
+            vm.type = resArr[1].class
+            vm.description = resArr[0].type_hierarchy
+          }).catch((err) => {
+            console.log(err);
+          })
         })
-        $scope.$apply(() => {
-          vm.image_url = event.target.result
-        })
+        // $scope.$apply(() => {
+        //   vm.image_url = event.target.result
+        // })
       }
       reader.readAsDataURL(image.files[0])
 
-      // $http.get(`https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=58b36d0709cc0552b000139d00d44d54babc25dd&url=${image}&version=2016-05-19`).then((result) => {
-      //   console.log(result);
-      // }).catch((err) => {
-      //   console.log(err);
-      // })
     }
   }
 })()
