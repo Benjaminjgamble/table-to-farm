@@ -1,6 +1,22 @@
+// COLORS
+$color-sky: #DFF8EB;
+$color-gray: #36393B;
+$color-black: #12100E;
+$color-blue: #99C5B5;
+$color-green: #4E5340;
 
-body {
-  // color: white;
-  background: url('http://modernistcuisine.com/wp-content/uploads/2012/04/Salad-Cutaway1.jpg') no-repeat;
-  background-size: cover;
+#body {
+  background: #DFF8EB;
+}
+
+#thumbnail {
+  width: 47vw;
+  max-height: 40vh;
+  object-fit: cover;
+}
+
+#list-image {
+  width: 40vw;
+  max-height: 30vh;
+  object-fit: cover;
 }

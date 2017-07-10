@@ -4,21 +4,21 @@ exports.seed = function(knex) {
     return knex('products').insert([
       {
         id: 1,
-        product_name: 'Onion',
-        type: 'vegetable',
-        image: 'http://dreamicus.com/data/onion/onion-01.jpg',
+        product_name: 'Red Onion',
+        type: 'Vegetable',
+        image: 'http://www.seedsavers.org/site/img/SEO%20Images/0395-red-wethersfield-onion.jpg',
         in_season: true,
-        description: 'Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        description: 'These red onions are sweet and fresh from the farm. Great for slicing and eating raw, or cooking to bring out the sweetness and natural sugars.',
         price: 29,
         created_at: new Date(),
         updated_at: new Date()
       }, {
         id: 2,
-        product_name: 'Potato',
-        type: 'vegetable',
-        image: 'https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato-standing.png?5666421063083394035',
+        product_name: 'Yukon Gold Potato',
+        type: 'Vegetable',
+        image: 'https://cdn.authoritynutrition.com/wp-content/uploads/2015/03/a-bunch-of-white-potatoes.jpg',
         in_season: true,
-        description: 'Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        description: 'These potatoes are great for all applications. With a nice thin skin, they are great for boiling and frying.',
         price: 31,
         created_at: new Date(),
         updated_at: new Date()
@@ -28,7 +28,7 @@ exports.seed = function(knex) {
         type: 'meat',
         image: 'https://cdn.davidwolfe.com/wp-content/uploads/2016/10/shutterstock_315615884-750x600.jpg',
         in_season: true,
-        description: 'Lorem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        description: 'These are free range, organic chickens. They have been fed a natural and hormone free diet. Good for all applications.',
         price: 89,
         created_at: new Date(),
         updated_at: new Date()

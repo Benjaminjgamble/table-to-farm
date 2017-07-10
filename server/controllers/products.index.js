@@ -24,7 +24,9 @@ function postProduct (req, res) {
 // USE MIDDLEWARE TO SEQUENTIALLY RUN CLOUDINARY THEN WATSON
 function cloudinaryUpload (req, res) {
   cloudinary.uploader.upload(req.body.file, function(result) {
-    console.log('cloudinary upload response', result.url)
+    console.log('cloudinary upload response', result)
+
+cloudinary.url('brughwtjzn2ocl1etpa0.jpg', {effect: "improve", height: 300, radius: 10, width: 450, crop: "limit"})
     res.send(result)
   })
 }

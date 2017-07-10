@@ -1,3 +1,12 @@
-body {
-  background: url("http://modernistcuisine.com/wp-content/uploads/2012/04/Salad-Cutaway1.jpg") no-repeat;
-  background-size: cover; }
+#body {
+  background: #DFF8EB; }
+
+#thumbnail {
+  width: 47vw;
+  max-height: 40vh;
+  object-fit: cover; }
+
+#list-image {
+  width: 40vw;
+  max-height: 30vh;
+  object-fit: cover; }
