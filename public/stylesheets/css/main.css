@@ -1,5 +1,11 @@
 #body {
-  background: #DFF8EB; }
+  background: #DFF8EB;
+  font-family: "Lora", serif; }
+  #body input {
+    font-family: "Bellefair", serif; }
+
+label {
+  color: #12100E; }
 
 #thumbnail {
   width: 47vw;

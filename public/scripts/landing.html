@@ -1,20 +1,25 @@
 <div class="container col-sm-6 col-sm-offset-3">
 
-  <img id="thumbnail" ng-src="{{$ctrl.image_url}}" alt="image_upload"/>
-  <form ng-submit="$ctrl.apiRequest()">
+  <!-- <form ng-submit="$ctrl.apiRequest()">
     <div class="form-group">
       <label for="product_image">File input</label>
-      <input type="file" id="image">
+      <input type="file" id="image" ng-change="$ctrl.apiRequest()">
       <p class="help-block">Upload an Image</p>
       <button type="submit" name="button">Submit</button>
     </div>
-  </form>
+  </form> -->
 
+  <img id="thumbnail" ng-src="{{$ctrl.image_url}}" alt="image_upload"/>
 <form ng-submit="$ctrl.postProduct()">
-  <div class="form-group" hidden>
+  <div class="form-group">
     <label for="product_image">File input</label>
-    <input type="text" id="product_image" ng-model="$ctrl.image_url">
+    <input type="file" id="image" ng-click="$ctrl.apiRequest()">
     <p class="help-block">Upload an Image</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="$ctrl.season"> In Season?
+    </label>
   </div>
   <div class="form-group">
     <label for="description">Description</label>
@@ -31,11 +36,6 @@
   <div class="form-group">
     <label for="price">Price</label>
     <input type="integer" class="form-control" id="price" placeholder="Price" ng-model="$ctrl.price">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" ng-model="$ctrl.season"> In Season?
-    </label>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>

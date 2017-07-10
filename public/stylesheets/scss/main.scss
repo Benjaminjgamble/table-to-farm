@@ -5,8 +5,22 @@ $color-black: #12100E;
 $color-blue: #99C5B5;
 $color-green: #4E5340;
 
+// FONTS
+$font-main: 'Bellefair', serif;
+$font-purveyor: 'Lora', serif;
+$font-cursive: 'Abril Fatface', cursive;
+$font-marker: 'Permanent Marker', cursive;
+
 #body {
   background: #DFF8EB;
+  input {
+    font-family: $font-main;
+  }
+  font-family: $font-purveyor;
+}
+
+label {
+  color: $color-black;
 }
 
 #thumbnail {
