@@ -5,8 +5,6 @@ const cloudinary = require('cloudinary');
 
 /* GET home page. */
 router.get('/products', products.getAllProducts)
-router.get('/main', )
-router.get('/signin', )
 router.post('/products', products.postProduct)
 router.post('/cloudinary', products.cloudinaryUpload)
 

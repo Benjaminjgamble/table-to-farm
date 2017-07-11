@@ -8,6 +8,12 @@ console.log('in app.config');
     $stateProvider
 
     .state({
+      name: 'base',
+      url: '/',
+      redirectTo: 'main'
+    })
+
+    .state({
       name: 'products',
       url: '/products',
       component: 'products'
