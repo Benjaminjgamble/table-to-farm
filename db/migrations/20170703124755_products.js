@@ -7,6 +7,7 @@ exports.up = function(knex) {
     table.boolean('in_season').notNullable().defaultTo(true)
     table.string('description').defaultTo('')
     table.integer('price').defaultTo(0)
+    table.integer('farm_id').references('farms.id').onDelete('CASCADE')
     table.timestamps(true, true)
   })
 }

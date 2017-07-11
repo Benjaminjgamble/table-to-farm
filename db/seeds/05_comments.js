@@ -1,22 +1,22 @@
 exports.seed = function(knex) {
-  return knex('farms_products').del()
+  return knex('comments').del()
   .then(() => {
-    return knex('farms_products').insert([
+    return knex('comments').insert([
       {
         id: 1,
-        farm_id: 1,
+        user_id: 1,
         product_id: 2,
         created_at: new Date(),
         updated_at: new Date()
       }, {
         id: 2,
-        farm_id: 2,
+        user_id: 2,
         product_id: 3,
         created_at: new Date(),
         updated_at: new Date()
       }, {
         id: 3,
-        farm_id: 3,
+        user_id: 3,
         product_id: 3,
         created_at: new Date(),
         updated_at: new Date()
@@ -25,7 +25,7 @@ exports.seed = function(knex) {
   })
   .then(() => {
     return knex.raw(
-      "SELECT setval('farms_products_id_seq', (SELECT MAX(id)FROM farms_products))"
+      "SELECT setval('comments_id_seq', (SELECT MAX(id)FROM comments))"
     )
   })
 }

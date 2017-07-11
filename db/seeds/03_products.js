@@ -10,6 +10,7 @@ exports.seed = function(knex) {
         in_season: true,
         description: 'These red onions are sweet and fresh from the farm. Great for slicing and eating raw, or cooking to bring out the sweetness and natural sugars.',
         price: 29,
+        farm_id: 2,
         created_at: new Date(),
         updated_at: new Date()
       }, {
@@ -20,6 +21,7 @@ exports.seed = function(knex) {
         in_season: true,
         description: 'These potatoes are great for all applications. With a nice thin skin, they are great for boiling and frying.',
         price: 31,
+        farm_id: 3,
         created_at: new Date(),
         updated_at: new Date()
       }, {
@@ -30,6 +32,7 @@ exports.seed = function(knex) {
         in_season: true,
         description: 'These are free range, organic chickens. They have been fed a natural and hormone free diet. Good for all applications.',
         price: 89,
+        farm_id: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
