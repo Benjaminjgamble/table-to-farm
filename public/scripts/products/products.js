@@ -1,5 +1,5 @@
 (function(){
-  console.log('products.js is connected')
+  console.log('in products.js')
 
   angular.module('app')
   .component('products', {

@@ -1,7 +1,12 @@
 console.log('in app.config');
 
 (function() {
-  angular.module('app').config(config)
+  angular.module('app').config(config).run(function (productsService) {
+    productsService.getAllProducts().then(function () {
+      console.log('!')
+    })
+  })
+
   config.$inject = ['$stateProvider', '$locationProvider']
   function config($stateProvider, $locationProvider){
     $locationProvider.html5Mode(true)

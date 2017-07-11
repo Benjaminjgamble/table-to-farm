@@ -1,5 +1,5 @@
 (function(){
-  console.log('main.js is connected')
+  console.log('in main.js')
 
   angular.module('app')
   .component('main', {
@@ -18,9 +18,6 @@
       }).catch((err) => {
         console.log(err);
       })
-      console.log(vm.products);
-
-      
     }
 
 

@@ -6,15 +6,16 @@
     templateUrl: './scripts/farm/farm.landing.html'
   })
 
-  controller.$inject = ['API_BASE_URL', '$http', '$state', '$scope']
-  function controller (baseUrl, $http, $state, $scope){
+  controller.$inject = ['API_BASE_URL', '$http', '$state', '$scope', 'productsService']
+  function controller (baseUrl, $http, $state, $scope, productsService){
     const vm = this
     vm.image_url = 'http://placehold.it/250/ffffff/000000'
 
-
-
     vm.$onInit = function () {
-
+      productsService.getFarmsProductsJoin().then((farmsProducts) => {
+        console.log('farmsProductsJoin.then', farmsProducts);
+        vm.farm_id = farmsProducts[0].farmsId
+      })
     }
 
     vm.postProduct = function () {
@@ -28,8 +29,17 @@
       }
 
       $http.post(`${baseUrl}/api/products`, newProduct).then((product) => {
-        $state.go('products')
+        vm.product_id = product.data[0].id
         console.log('this is the new product', product.data);
+      }).then(() => {
+        let newJoin = {
+          farm_id: vm.farm_id,
+          product_id: vm.product_id
+        }
+        $http.post(`${baseUrl}/api/farm`, newJoin).then((join) => {
+          console.log('this is the newJoin', join);
+          $state.go('products')
+        })
       }).catch((err) => {
         console.log(err);
       })

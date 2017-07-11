@@ -5,13 +5,13 @@ exports.seed = function(knex) {
       {
         id: 1,
         farm_id: 1,
-        product_id: 1,
+        product_id: 2,
         created_at: new Date(),
         updated_at: new Date()
       }, {
         id: 2,
         farm_id: 2,
-        product_id: 2,
+        product_id: 3,
         created_at: new Date(),
         updated_at: new Date()
       }, {

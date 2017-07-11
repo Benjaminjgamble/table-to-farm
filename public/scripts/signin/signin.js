@@ -1,5 +1,5 @@
 (function(){
-  console.log('signin.js is connected')
+  console.log('in signin.js')
 
   angular.module('app')
   .component('signin', {
