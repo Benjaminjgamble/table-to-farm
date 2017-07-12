@@ -27,11 +27,12 @@
 <!-- LINKS ALL CLIENT SIDE SCRIPTS -->
   <script defer src="./scripts/app.module.js"></script>
   <script defer src="./scripts/app.config.js"></script>
-  <script defer src="./scripts/products/products.js"></script>
-  <script defer src="./scripts/farm/farm.landing.js"></script>
   <script defer src="./scripts/main/main.js"></script>
-  <script defer src="./scripts/products/productsService.js"></script>
   <script defer src="./scripts/signin/signin.js"></script>
+  <script defer src="./scripts/products/products.js"></script>
+  <script defer src="./scripts/products/productsService.js"></script>
+  <script defer src="./scripts/farm/farm.landing.js"></script>
+  <script defer src="./scripts/farm/farm.edit.js"></script>
 <!-- REMOVES THE # FROM THE BASE URL -->
   <base href="/">
 </head>
@@ -44,6 +45,7 @@
         <li><a href="/main">/main</a></li>
         <li><a href="/farm">/farm</a></li>
         <li><a href="/products">/products</a></li>
+        <li><a href="/farm/:id/edit">/farm/:id/edit</a></li>
       </ul>
     </nav>
   </header>

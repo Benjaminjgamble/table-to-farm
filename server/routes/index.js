@@ -7,7 +7,7 @@ const cloudinary = require('cloudinary')
 /* GET home page. */
 router.get('/products', products.getAllProducts)
 router.get('/products/:id', products.getProductById)
-// router.patch('/products/:id/edit', products.editProductById)
+router.patch('/products/:id/edit', products.editProductById)
 router.post('/products', products.postProduct)
 router.get('/farm', farm.getPurveyor)
 router.get('/farm/:id', farm.getProductsByFarm)

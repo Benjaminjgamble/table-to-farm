@@ -10,14 +10,25 @@
   function controller (baseUrl, $http, $state, $scope, productsService) {
 
     const vm = this
-    vm.image_url = 'http://placehold.it/250/ffffff/000000'
+    vm.image_url = 'http://ajaxuploader.com/images/drag-drop-file-upload.png'
+    vm.$onInit = $onInit
     vm.getProductsByFarm = getProductsByFarm
     vm.postProduct = postProduct
     vm.apiRequest = apiRequest
+    vm.getSingleProduct = getSingleProduct
 
-    vm.$onInit = function () {
+    function $onInit () {
       vm.products = productsService.products
       vm.getProductsByFarm()
+    }
+
+    function getSingleProduct (product) {
+      let id = product.id
+      productsService.getProductById(id)
+      .then(() => {
+        vm.singleProduct = productsService.singleProduct
+        $state.go('editproduct', { id })
+      })
     }
 
     function getProductsByFarm () {
@@ -43,6 +54,8 @@
       $http.post(`${baseUrl}/api/products`, newProduct)
       .then((returnedProduct) => {
         vm.product_id = returnedProduct.data[0].id
+        vm.getProductsByFarm()
+        vm.image_url = 'http://ajaxuploader.com/images/drag-drop-file-upload.png'
       }).catch((err) => {
         console.log(err);
       })

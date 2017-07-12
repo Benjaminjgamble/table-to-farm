@@ -21,7 +21,6 @@
       productsService.getProductById(id)
       .then(() => {
         vm.singleProduct = productsService.singleProduct
-        console.log('product.js front end', vm.singleProduct);
       })
     }
 

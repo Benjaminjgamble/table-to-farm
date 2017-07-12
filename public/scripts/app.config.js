@@ -29,6 +29,12 @@
     })
 
     .state({
+      name: 'editproduct',
+      url: '/farm/:id/edit',
+      component: 'farm.edit'
+    })
+
+    .state({
       name: 'main',
       url: '/main',
       component: 'main'

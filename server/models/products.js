@@ -20,6 +20,12 @@ class Products {
     .returning('*')
   }
 
+  static editProduct (id, body) {
+    return knex('products')
+    .update(body, '*')
+    .where({ id })
+  }
+
 }
 
 module.exports = Products

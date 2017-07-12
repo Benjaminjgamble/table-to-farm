@@ -21,7 +21,7 @@
 							{{product.product_name}}
 						</td>
 						<td>
-							<img src="{{product.image}}" id="list-image">
+							<img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="list-image">
 						</td>
 						<td>
 							{{product.description}}
