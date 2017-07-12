@@ -1,4 +1,41 @@
-<div class="container col-sm-6 col-sm-offset-3">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+            <th>
+							Product
+						</th>
+            <th>
+							Image
+						</th>
+            <th>
+							Description
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat= "product in $ctrl.farmProducts">
+						<td>
+							{{product.product_name}}
+						</td>
+						<td>
+							<img src="{{product.image}}" id="list-image">
+						</td>
+						<td>
+							{{product.description}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+
+<div class="container col-sm-4">
   <img id="thumbnail" ng-src="{{$ctrl.image_url}}" alt="image_upload"/>
   <form ng-submit="$ctrl.postProduct()">
     <div class="form-group">

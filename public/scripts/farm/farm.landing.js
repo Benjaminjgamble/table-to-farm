@@ -12,9 +12,23 @@
     vm.image_url = 'http://placehold.it/250/ffffff/000000'
 
     vm.$onInit = function () {
-      productsService.getFarmsProductsJoin().then((farmsProducts) => {
-        console.log('farmsProductsJoin.then', farmsProducts);
-        vm.farm_id = farmsProducts[0].farmsId
+      vm.products = productsService.products
+      // // productsService.getFarmsProductsJoin().then((farmsProducts) => {
+      // //   console.log('farmsProductsJoin.then', farmsProducts);
+      // //   vm.farm_id = farmsProducts[0].farmsId
+      // // })
+
+    }
+
+    vm.getProductsByFarm = function () {
+      let farmId = {
+        id: vm.products.
+      }
+      $http.get(`${baseUrl}/api/farm/${id}`).then((result) => {
+        console.log(result);
+      }).catch((err) => {
+        vm.farmProducts = result.data
+        console.log(err);
       })
     }
 
@@ -25,21 +39,13 @@
         in_season: vm.season,
         image: vm.image_url,
         description: vm.description,
-        price: vm.price
+        price: vm.price,
+        farm_id: 1
       }
 
-      $http.post(`${baseUrl}/api/products`, newProduct).then((product) => {
-        vm.product_id = product.data[0].id
-        console.log('this is the new product', product.data);
-      }).then(() => {
-        let newJoin = {
-          farm_id: vm.farm_id,
-          product_id: vm.product_id
-        }
-        $http.post(`${baseUrl}/api/farm`, newJoin).then((join) => {
-          console.log('this is the newJoin', join);
-          $state.go('products')
-        })
+      $http.post(`${baseUrl}/api/products`, newProduct).then((returnedProduct) => {
+        vm.product_id = returnedProduct.data[0].id
+        console.log('this is the new product', returnedProduct);
       }).catch((err) => {
         console.log(err);
       })

@@ -14,8 +14,8 @@ function getAllProducts (req, res) {
 function postProduct (req, res) {
   let newProduct = req.body
   console.log('inside post controller', req.body);
-  products.postProduct(newProduct).then((newProduct) => {
-    res.json(newProduct)
+  products.postProduct(newProduct).then((returnedProduct) => {
+    res.json(returnedProduct)
   }).catch((err) => {
     console.error(err);
   })

@@ -6,9 +6,10 @@ const cloudinary = require('cloudinary');
 
 /* GET home page. */
 router.get('/products', products.getAllProducts)
-router.get('/farm', farm.getPurveyor)
-router.post('/farm', farm.postFarmProductJoin)
 router.post('/products', products.postProduct)
+router.get('/farm', farm.getPurveyor)
+router.get('/farm/:id', farm.getProductsByFarm)
+// router.post('/farm', farm.postFarmProductJoin)
 router.post('/cloudinary', products.cloudinaryUpload)
 
 module.exports = router;
