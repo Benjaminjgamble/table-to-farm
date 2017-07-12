@@ -15,6 +15,16 @@
         return this.products
       })
     }
+
+    this.getProductById = function (id) {
+      console.log(id);
+      return $http.get(`${baseUrl}/api/products/${id}`)
+      .then((product) => {
+        console.log('front singleProduct:', product);
+        this.singleProduct = product.data
+        return this.singleProduct
+      })
+    }
   }
 
 })()

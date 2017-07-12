@@ -3,12 +3,27 @@ const cloudinary = require('cloudinary');
 
 function getAllProducts (req, res) {
   products.getAllProducts()
-  .then((allProducts)=>{
+  .then((allProducts) => {
     res.json(allProducts)
   }).catch((err) => {
     console.error(err);
   })
 }
+
+function getProductById (req, res) {
+  let id = req.params.id
+  console.log('controller: getProductById', id);
+  products.getOneProduct(id)
+  .then((soloProduct) => {
+    res.json(soloProduct)
+  }).catch((err) => {
+    console.error(err);
+  })
+}
+
+// function editProductById (req, res) {
+//   console.log('controller: editProductById req = ', req);
+// }
 
 function postProduct (req, res) {
   let newProduct = req.body
@@ -30,4 +45,4 @@ function cloudinaryUpload (req, res) {
 
 
 
-module.exports = { getAllProducts, postProduct, cloudinaryUpload }
+module.exports = { getAllProducts, postProduct, cloudinaryUpload, getProductById }

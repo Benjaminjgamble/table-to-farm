@@ -12,7 +12,7 @@ function getPurveyor (req, res) {
 
 function getProductsByFarm (req, res) {
   let id = req.params.id
-
+  console.log(id);
   farm.getFarmProducts(id)
   .then((farmProducts) => {
     res.json(farmProducts)
