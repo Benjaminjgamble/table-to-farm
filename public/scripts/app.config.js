@@ -23,15 +23,21 @@
     })
 
     .state({
-      name: 'farm',
-      url: '/farm',
-      component: 'farm.landing'
+      name: 'showproduct',
+      url: '/main/:id',
+      component: 'main.show'
     })
 
     .state({
       name: 'editproduct',
       url: '/farm/:id/edit',
       component: 'farm.edit'
+    })
+
+    .state({
+      name: 'farm',
+      url: '/farm',
+      component: 'farm.landing'
     })
 
     .state({
