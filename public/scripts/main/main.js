@@ -1,5 +1,4 @@
 (function(){
-  console.log('in main.js')
 
   angular.module('app')
   .component('main', {
@@ -12,14 +11,13 @@
     const vm = this
 
     vm.$onInit = function () {
-      productsService.getAllProducts().then(() => {
+      productsService.getAllProducts()
+      .then(() => {
         vm.products = productsService.products;
-
       }).catch((err) => {
         console.log(err);
       })
     }
-
-
   }
+
 })()

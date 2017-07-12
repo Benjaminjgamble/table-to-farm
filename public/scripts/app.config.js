@@ -1,9 +1,7 @@
-console.log('in app.config');
 
 (function() {
   angular.module('app').config(config).run(function (productsService) {
     productsService.getAllProducts().then(function () {
-      console.log('!')
     })
   })
 

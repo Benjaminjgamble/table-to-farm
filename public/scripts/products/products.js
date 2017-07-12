@@ -1,5 +1,4 @@
 (function(){
-  console.log('in products.js')
 
   angular.module('app')
   .component('products', {
@@ -10,11 +9,11 @@
   controller.$inject = ['API_BASE_URL', '$http', '$state', 'productsService']
   function controller (baseUrl, $http, $state, productsService){
     const vm = this
+    vm.$onInit = $onInit
 
-    vm.$onInit = function () {
+    function $onInit () {
       vm.products = productsService.products
-      console.log(productsService.products);
     }
-
   }
+
 })()

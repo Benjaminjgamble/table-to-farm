@@ -37,7 +37,7 @@
 
 <div class="container col-sm-4">
   <img id="thumbnail" ng-src="{{$ctrl.image_url}}" alt="image_upload"/>
-  <form ng-submit="$ctrl.postProduct()">
+  <form ng-submit="$ctrl.postProduct(); $ctrl.getProductsByFarm()">
     <div class="form-group">
       <label for="product_image">Upload an Image</label>
       <input onchange="angular.element(this).scope().fileNameChanged(this)" type="file" id="image">
