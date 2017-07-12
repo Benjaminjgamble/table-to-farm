@@ -21,9 +21,9 @@
     }
 
     vm.getProductsByFarm = function () {
-      let farmId = {
-        id: vm.products.
-      }
+      // let farmId = {
+      //   id: vm.products
+      // }
       $http.get(`${baseUrl}/api/farm/${id}`).then((result) => {
         console.log(result);
       }).catch((err) => {
