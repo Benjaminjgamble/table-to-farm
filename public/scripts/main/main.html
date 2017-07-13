@@ -1,10 +1,39 @@
 <div class="jumbotron">
   <h1>Welcome!</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim atat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru.</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a></p>
+  <p><a class="btn btn-primary btn-lg" href="/signin" role="button">Sign Up</a></p>
 </div>
 
 <div class="container-fluid">
+  <div class="row">
+    <h3>Filter By:</h3>
+    <ul>
+      <li><div class="btn-group">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Market <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+        </ul>
+      </div></li>
+      <li><div class="btn-group">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Farm <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+        </ul>
+      </div></li>
+      <li><div class="btn-group">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Product <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+        </ul>
+      </div></li>
+    </ul>
+  </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="col-sm-4" ng-repeat="product in $ctrl.products">
