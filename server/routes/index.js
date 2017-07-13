@@ -7,6 +7,7 @@ const cloudinary = require('cloudinary')
 
 /* GET home page. */
 router.get('/farm', farm.getPurveyor)
+router.get('/farms', farm.getFarms)
 router.get('/users', users.getAllUsers)
 router.get('/products', products.getAllProducts)
 router.get('/farm/:id', farm.getProductsByFarm)

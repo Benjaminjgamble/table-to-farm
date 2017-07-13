@@ -10,6 +10,15 @@ function getPurveyor (req, res) {
   })
 }
 
+function getFarms (req, res) {
+  farm.getFarms()
+  .then((farms) => {
+    res.json(farms)
+  }).catch((err) => {
+    console.error(err);
+  })
+}
+
 function getProductsByFarm (req, res) {
   let id = req.params.id
   console.log(id);
@@ -21,4 +30,4 @@ function getProductsByFarm (req, res) {
   })
 }
 
-module.exports = { getPurveyor, getProductsByFarm }
+module.exports = { getPurveyor, getProductsByFarm, getFarms }

@@ -16,6 +16,14 @@
       })
     }
 
+    this.getAllFarms = function () {
+      return $http.get(`${baseUrl}/api/farms`)
+      .then((farms) => {
+        this.farms = farms.data
+        return this.farms
+      })
+    }
+
     this.getProductById = function (id) {
       return $http.get(`${baseUrl}/api/products/${id}`)
       .then((product) => {

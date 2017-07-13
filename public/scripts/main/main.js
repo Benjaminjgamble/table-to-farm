@@ -17,7 +17,14 @@
       .then(() => {
         vm.products = productsService.products;
       }).catch((err) => {
-        console.log(err);
+        console.error(err);
+      })
+
+      productsService.getAllFarms()
+      .then(() => {
+        vm.farms = productsService.farms
+      }).catch((err) => {
+        console.error(err);
       })
     }
 

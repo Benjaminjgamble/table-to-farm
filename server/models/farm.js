@@ -11,6 +11,10 @@ class Farms {
     .where('farms.id', 1)
   }
 
+  static getFarms () {
+    return knex('farms')
+  }
+
   static getFarmProducts (id) {
     return knex('products')
     .where('farm_id', id)

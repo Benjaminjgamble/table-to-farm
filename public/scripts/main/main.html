@@ -1,4 +1,7 @@
 <h1>inside main.html</h1>
+<div class="row" ng-repeat="farm in $ctrl.farms">
+	<h3><a href="/{{farm.farm_name}}">{{farm.farm_name}}</a></h3>
+</div>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8">
