@@ -21,6 +21,7 @@
       productsService.getProductById(id)
       .then(() => {
         vm.singleProduct = productsService.singleProduct
+        $state.go('showproduct', { id })
       })
     }
 
