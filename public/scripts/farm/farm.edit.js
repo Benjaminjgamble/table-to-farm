@@ -20,12 +20,12 @@
     function editProduct () {
       let editedProduct = {
         id: vm.singleProduct.id,
-        product_name: vm.productName,
-        type: vm.type,
-        in_season: vm.season,
-        image: vm.image_url,
-        description: vm.description,
-        price: vm.price,
+        product_name: vm.singleProduct.product_name,
+        type: vm.singleProduct.type,
+        in_season: vm.singleProduct.in_season,
+        image: vm.singleProduct.image,
+        description: vm.singleProduct.description,
+        price: vm.singleProduct.price,
         farm_id: 1
       }
 

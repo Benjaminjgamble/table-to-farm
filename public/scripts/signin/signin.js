@@ -10,9 +10,13 @@
   function controller (baseUrl, $http, $state){
 
     const vm = this
+    vm.email
+    vm.password
     vm.$onInit = $onInit
     vm.showUserSignUp = showUserSignUp
     vm.showPurveyorSignUp = showPurveyorSignUp
+    vm.getAllFarms = getAllFarms
+    vm.getAllUsers = getAllUsers
 
 
     function $onInit () {
@@ -35,6 +39,30 @@
         vm.showPurveyor = true
       }
     }
+
+    function getAllUsers (email, password) {
+      email = vm.email
+      password = vm.password
+      $http.get(`${baseUrl}/api/users`)
+      .then((allUsers) => {
+        console.log(allUsers);
+        allUsers = allUsers.data
+        let user = 'Try again!'
+        allUsers.forEach((el) => {
+          if(el.email === email && el.password === password) {
+            user = el
+            console.log(`Welcome ${el.first_name}!`);
+            return user
+          }
+          return user
+        })
+      })
+    }
+
+    function getAllFarms () {
+
+    }
+
   }
 
 })()
