@@ -10,4 +10,14 @@ function getAll (req, res) {
   })
 }
 
-module.exports = { getAll }
+function farmsMarketsJoin (req, res) {
+  markets.farmsMarketsJoin()
+  .then((join) => {
+    console.log(join);
+    res.json(join)
+  }).catch((err) => {
+    console.error(err);
+  })
+}
+
+module.exports = { getAll, farmsMarketsJoin }

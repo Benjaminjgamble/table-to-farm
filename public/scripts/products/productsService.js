@@ -40,6 +40,14 @@
         return this.singleProduct
       })
     }
+
+    this.farmsMarketsJoin = function () {
+      return $http.get(`${baseUrl}/api/farms_markets`)
+      .then((farmsMarkets) => {
+        this.farmsMarkets = farmsMarkets.data
+        return this.farmsMarkets
+      })
+    }
   }
 
 })()

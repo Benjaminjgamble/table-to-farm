@@ -26,6 +26,14 @@
       }).catch((err) => {
         console.error(err);
       })
+
+      productsService.farmsMarketsJoin()
+      .then(() => {
+        vm.farmsMarkets = productsService.farmsMarkets
+        console.log(vm.farmsMarkets);
+      }).catch((err) => {
+        console.error(err);
+      })
     }
 
     productsService.getAllMarkets()

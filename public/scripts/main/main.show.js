@@ -12,7 +12,19 @@
     vm.$onInit = $onInit
 
     function $onInit () {
+      vm.singleProduct = productsService.singleProduct[0]
+      vm.farms = productsService.farms
+      vm.farmsMarkets = productsService.farmsMarkets
+      vm.markets = productsService.markets
+      vm.farm
 
+      vm.farms.forEach((el) => {
+        if (el.id === vm.singleProduct.farm_id) {
+          vm.farm = el
+        }
+      })
+
+      
     }
 
   }

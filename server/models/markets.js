@@ -8,6 +8,10 @@ class Markets {
     return knex('markets')
   }
 
+  static farmsMarketsJoin() {
+    return knex('farms_markets')
+  }
+
 }
 
 module.exports = Markets
