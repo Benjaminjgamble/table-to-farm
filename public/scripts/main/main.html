@@ -1,40 +1,15 @@
-<h1>inside main.html</h1>
-<div class="row" ng-repeat="farm in $ctrl.farms">
-	<h3><a href="/{{farm.farm_name}}">{{farm.farm_name}}</a></h3>
+<div class="jumbotron">
+  <h1>Welcome!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim atat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru.</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a></p>
 </div>
+
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8">
-			<table class="table table-hover table-bordered">
-				<thead>
-					<tr>
-            <th>
-							Product
-						</th>
-            <th>
-							Image
-						</th>
-            <th>
-							Description
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat= "product in $ctrl.products">
-						<td>
-							{{product.product_name}}
-						</td>
-						<td>
-							<img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="list-image">
-						</td>
-						<td>
-							{{product.description}}
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="col-md-4">
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="col-sm-4" ng-repeat="product in $ctrl.products">
+        <img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="list-image">
+      </div>
+    </div>
+  </div>
 </div>
