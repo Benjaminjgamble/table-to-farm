@@ -24,6 +24,14 @@
       })
     }
 
+    this.getAllMarkets = function () {
+      return $http.get(`${baseUrl}/api/markets`)
+      .then((markets) => {
+        this.markets = markets.data
+        return this.markets
+      })
+    }
+
     this.getProductById = function (id) {
       return $http.get(`${baseUrl}/api/products/${id}`)
       .then((product) => {

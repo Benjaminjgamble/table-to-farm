@@ -3,11 +3,13 @@ var router = express.Router()
 const products = require('../controllers/products.index')
 const farm = require('../controllers/farm.index')
 const users = require('../controllers/users.index')
+const markets = require('../controllers/markets.index')
 const cloudinary = require('cloudinary')
 
 /* GET home page. */
 router.get('/farm', farm.getPurveyor)
 router.get('/farms', farm.getFarms)
+router.get('/markets', markets.getAll)
 router.get('/users', users.getAllUsers)
 router.get('/products', products.getAllProducts)
 router.get('/farm/:id', farm.getProductsByFarm)

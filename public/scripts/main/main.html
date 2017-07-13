@@ -10,18 +10,18 @@
     <ul>
       <li><div class="btn-group">
         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Market <span class="caret"></span>
+          Farm <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
+          <li ng-repeat="farm in $ctrl.farms"><a href="#">{{farm.farm_name}}</a></li>
         </ul>
       </div></li>
       <li><div class="btn-group">
         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Farm <span class="caret"></span>
+          Market <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
+          <li ng-repeat="market in $ctrl.markets"><a href="#">{{market.market_name}}</a></li>
         </ul>
       </div></li>
       <li><div class="btn-group">
@@ -29,7 +29,7 @@
           Product <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
+          <li ng-repeat="product in $ctrl.products"><a href="#">{{product.type}}</a></li>
         </ul>
       </div></li>
     </ul>

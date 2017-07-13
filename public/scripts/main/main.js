@@ -28,6 +28,13 @@
       })
     }
 
+    productsService.getAllMarkets()
+    .then(() => {
+      vm.markets = productsService.markets
+    }).catch((err) => {
+      console.error(err);
+    })
+
     function getSingleProduct (product) {
       let id = product.id
       productsService.getProductById(id)
