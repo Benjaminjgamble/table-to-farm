@@ -5,11 +5,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 // CLOUDINARY HOSTS IMAGES
 var cloudinary = require('cloudinary');
-
 var index = require('./server/routes/index');
-var users = require('./server/routes/users');
-// var products = require('./server/routes/products')
-
 var app = express();
 
 // setting cloudinary api configuration
@@ -33,7 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/api', index);
-app.use('/api/users', users);
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
 })

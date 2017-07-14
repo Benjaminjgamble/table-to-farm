@@ -12,7 +12,7 @@
           Farm <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li ng-repeat="farm in $ctrl.farms"><a href="#">{{farm.farm_name}}</a></li>
+          <li ng-repeat="farm in $ctrl.farms"><a href="/{{farm.id}}">{{farm.farm_name}}</a></li>
         </ul>
       </div></li>
       <li><div class="btn-group">
@@ -20,7 +20,7 @@
           Market <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li ng-repeat="market in $ctrl.markets"><a href="#">{{market.market_name}}</a></li>
+          <li ng-repeat="market in $ctrl.markets"><a href="/{{market.id}}">{{market.market_name}}</a></li>
         </ul>
       </div></li>
       <li><div class="btn-group">
@@ -28,7 +28,7 @@
           Product <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li ng-repeat="product in $ctrl.products"><a href="#">{{product.type}}</a></li>
+          <li ng-repeat="product in $ctrl.products"><a href="/{{product.type}}">{{product.type}}</a></li>
         </ul>
       </div></li>
     </ul>
