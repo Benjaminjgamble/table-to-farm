@@ -6,36 +6,33 @@
 <div class="container-fluid">
   <div class="row">
     <h3>Filter By:</h3>
-    <ul>
-      <li><div class="btn-group">
-        <button type="button" id="drop" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Farm <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li ng-repeat="farm in $ctrl.farms"><a href="/{{farm.id}}">{{farm.farm_name}}</a></li>
-        </ul>
-      </div></li>
-      <li><div class="btn-group">
-        <button type="button" id="drop" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Market <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li ng-repeat="market in $ctrl.markets"><a href="/{{market.id}}">{{market.market_name}}</a></li>
-        </ul>
-      </div></li>
-      <li><div class="btn-group">
-        <button type="button" id="drop" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Product <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li ng-repeat="product in $ctrl.products"><a href="/{{product.type}}">{{product.type}}</a></li>
-        </ul>
-      </div></li>
-    </ul>
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active">
+          <input type="search" class="form-control input-sm search-form" ng-model="filterInput" placeholder="Filter">
+        </li>
+        <div class="form-inline">
+          <label for="sort">Farm</label>
+          <select class="form-control" ng-model="filterInput" id="sort">
+            <option ng-repeat="farm in $ctrl.farms | orderBy:$ctrl.sortBy | filter:filterInput"><p>{{farm.farm_name}}</p></option>
+          </select>
+        </div>
+        <div class="form-inline">
+          <label for="sort">Market</label>
+          <select class="form-control" ng-model="filterInput" id="sort">
+            <option ng-repeat="market in $ctrl.markets | orderBy:$ctrl.sortBy | filter:filterInput"><p>{{market.market_name}}</p></option>
+          </select>
+        </div>
+        <div class="form-inline">
+          <label for="sort">Product</label>
+          <select class="form-control" ng-model="filterInput" id="sort">
+            <option ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:filterInput"><p>{{product.type}}</p></option>
+          </select>
+        </div>
+      </ul>
   </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div class="col-sm-4" ng-repeat="product in $ctrl.products">
+      <div class="col-sm-4" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:filterInput">
         <img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="list-image">
       </div>
     </div>

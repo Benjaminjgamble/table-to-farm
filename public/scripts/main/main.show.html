@@ -1,9 +1,11 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
+    <h2>{{$ctrl.singleProduct.product_name}}</h2>
     <img src="{{$ctrl.singleProduct.image}}" id="list-image">
-    <h3>{{$ctrl.farm.farm_name}}</h3>
-    <h3>{{$ctrl.singleProduct.product_name}}</h3>
+    <h3>{{$ctrl.singleProduct.description}}</h3>
   </div>
 </div>
-<h4>{{$ctrl.farmsMarkets}}</h4>
-<h4>{{$ctrl.markets}}</h4>
+<div class="col-sm-6" ng-repeat="producer in $ctrl.productsProducer">
+  <a href="/farm/{{producer.farm_id}}">{{producer.farm_name}}</a>
+  <a href="/{{producer.market_id}}">{{producer.market_name}}</a>
+</div>

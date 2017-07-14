@@ -13,6 +13,8 @@
     vm.getSingleProduct = getSingleProduct
 
     function $onInit () {
+      vm.sortBy
+
       productsService.getAllProducts()
       .then(() => {
         vm.products = productsService.products;
@@ -30,7 +32,7 @@
       productsService.farmsMarketsJoin()
       .then(() => {
         vm.farmsMarkets = productsService.farmsMarkets
-        console.log(vm.farmsMarkets);
+        console.log('farms markets join', vm.farmsMarkets);
       }).catch((err) => {
         console.error(err);
       })
@@ -48,7 +50,7 @@
       productsService.getProductById(id)
       .then(() => {
         vm.singleProduct = productsService.singleProduct
-        console.log(vm.singleProduct);
+        console.log('single product', vm.singleProduct);
         $state.go('showproduct', { id })
       })
     }

@@ -17,6 +17,18 @@
     })
 
     .state({
+      name: 'markets',
+      url: '/markets',
+      component: 'markets.index'
+    })
+
+    .state({
+      name: 'onemarket',
+      url: '/markets/:id',
+      component: 'markets.one'
+    })
+
+    .state({
       name: 'products',
       url: '/products',
       component: 'products'
@@ -38,6 +50,12 @@
       name: 'farm',
       url: '/farm',
       component: 'farm.landing'
+    })
+
+    .state({
+      name: 'farmbio',
+      url: '/farm/:id',
+      component: 'farm.bio'
     })
 
     .state({
