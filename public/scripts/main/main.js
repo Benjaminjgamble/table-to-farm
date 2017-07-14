@@ -13,7 +13,6 @@
     vm.getSingleProduct = getSingleProduct
 
     function $onInit () {
-      vm.sortBy
 
       productsService.getAllProducts()
       .then(() => {
