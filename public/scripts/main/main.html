@@ -1,15 +1,14 @@
-<div class="jumbotron">
+<div id="jumbotron" class="jumbotron">
   <h1>Welcome!</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim atat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru.</p>
-  <p><a class="btn btn-primary btn-lg" href="/signin" role="button">Sign Up</a></p>
+  <button id="jumbotron-btn" type="button" name="button">Sign Up</button>
 </div>
-<h2>{{$ctrl.farmsMarkets}}</h2>
 <div class="container-fluid">
   <div class="row">
     <h3>Filter By:</h3>
     <ul>
       <li><div class="btn-group">
-        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" id="drop" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Farm <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
@@ -17,7 +16,7 @@
         </ul>
       </div></li>
       <li><div class="btn-group">
-        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" id="drop" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Market <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
@@ -25,7 +24,7 @@
         </ul>
       </div></li>
       <li><div class="btn-group">
-        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" id="drop" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Product <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">

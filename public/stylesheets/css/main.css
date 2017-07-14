@@ -1,53 +1,40 @@
-header {
-  background: #99C5B5;
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  border-bottom: 3px solid #4E5340; }
-  header ul {
-    list-style: none; }
-    header ul li {
-      display: inline-block;
-      float: left;
-      padding: 10px; }
-  header a {
+#jumbotron {
+  border: 1px solid #9FB8AD;
+  background-color: #EDE6E3;
+  text-align: center; }
+  #jumbotron #jumbotron-btn {
+    background-color: #9FB8AD;
+    border-radius: 10px;
+    border: none;
     color: white;
+    padding: 15px 32px;
+    text-align: center;
     text-decoration: none;
-    font-weight: bold; }
-  header #logo {
-    margin: 1px;
-    float: left;
-    width: 200px;
-    height: 45px;
-    background: url("https://www.farmersbusinessnetwork.com/img/web/newcms/logo/logo_flat.png") no-repeat center;
-    display: block; }
-  header nav {
-    float: right;
-    padding: 20px; }
-  header #menu-icon {
-    background: url("http://icons.iconarchive.com/icons/icons8/ios7/128/Plants-Farm-icon.png");
-    display: hidden;
-    width: 32px;
-    height: 32px; }
+    display: inline-block;
+    font-size: 16px; }
 
-.btn {
-  background-color: orange;
-  border-radius: 20px; }
+#drop {
+  background-color: #9FB8AD;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px; }
 
 ul {
   list-style: none; }
   ul li {
-    display: inline-block;
-    float: left;
-    padding: 10px; }
+    display: inline-block; }
 
-a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold; }
+header ul {
+  font-size: 20px;
+  font-family: "Bellefair", serif;
+  list-style: none; }
+  header ul li {
+    display: inline-block;
+    float: right;
+    padding: 10px; }
+  header ul a {
+    color: #4C5F6B;
+    text-decoration: none; }
 
 @media only screen and (max-width: 640px) {
   header {
@@ -73,7 +60,7 @@ a {
 #body {
   margin-top: 10px;
   padding-top: 20px;
-  background: #DFF8EB;
+  background: #EDE6E3;
   font-family: "Lora", serif; }
   #body input {
     font-family: "Bellefair", serif; }
