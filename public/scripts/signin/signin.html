@@ -36,19 +36,37 @@
     <button class="btn" type="button" name="button" ng-click="$ctrl.showUserSignUp()">Customer</button>
     <button class="btn" type="button" name="button" ng-click="$ctrl.showPurveyorSignUp()">Purveyor</button>
     <!-- USER SIGN UP -->
-    <form class="form-horizontal" ng-show="$ctrl.showUser">
+    <form class="form-horizontal" ng-show="$ctrl.showUser" ng-submit="$ctrl.userSignUp()">
+      <div class="form-group">
+        <label for="first-name" class="control-label">First Name</label>
+        <div class="">
+          <input type="text" class="form-control" id="first-name" placeholder="First Name" ng-model="$ctrl.first_name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="last-name" class="control-label">Last Name</label>
+        <div class="">
+          <input type="text" class="form-control" id="last-name" placeholder="Last Name" ng-model="$ctrl.last_name">
+        </div>
+      </div>
       <div class="form-group">
         <label for="user-email" class="control-label">Email</label>
         <div class="">
-          <input type="email" class="form-control" id="user-email" placeholder="Email">
+          <input type="email" class="form-control" id="user-email" placeholder="Email" ng-model="$ctrl.user_email">
         </div>
       </div>
       <div class="form-group">
         <label for="user-password" class="control-label">Password</label>
         <div class="">
-          <input type="password" class="form-control" id="user-password" placeholder="Password">
+          <input type="password" class="form-control" id="user-password" placeholder="Password" ng-model="$ctrl.user_password">
         </div>
       </div>
+      <!-- <div class="form-group">
+        <label for="user-image" class="control-label">Profile Pic</label>
+        <div class="">
+          <input type="text" class="form-control" placeholder="Image" ng-model="user-image">
+        </div>
+      </div> -->
       <div class="form-group">
         <div class="">
           <button type="submit" class="btn">Sign Up</button>
@@ -56,54 +74,54 @@
       </div>
     </form>
     <!-- PURVEYOR SIGN UP -->
-    <form class="form-horizontal" ng-show="$ctrl.showPurveyor">
+    <form class="form-horizontal" ng-show="$ctrl.showPurveyor" ng-submit="$ctrl.farmSignUp()">
       <div class="form-group">
         <label for="farm-name" class="control-label">Farm Name</label>
         <div class="">
-          <input type="text" class="form-control" placeholder="Farm Name">
+          <input type="text" class="form-control" placeholder="Farm Name" ng-model="$ctrl.farm_name">
         </div>
       </div>
       <div class="form-group">
-        <label for="location" class="control-label">Location</label>
+        <label for="type" class="control-label">Type</label>
         <div class="">
-          <input type="text" id="location" class="form-control"placeholder="Location">
+          <input type="text" class="form-control" placeholder="Type" ng-model="$ctrl.type">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="website" class="control-label">Website</label>
+        <div class="">
+          <input type="text" class="form-control" placeholder="Website" ng-model="$ctrl.website">
         </div>
       </div>
       <div class="form-group">
         <label for="email" class="control-label">Email</label>
         <div class="">
-          <input type="text" id="email" class="form-control"placeholder="Email">
+          <input type="text" id="email" class="form-control"placeholder="Location" ng-model="$ctrl.farm_email">
         </div>
       </div>
       <div class="form-group">
-        <label for="password" class="control-label">Password</label>
+        <label for="location" class="control-label">Location</label>
         <div class="">
-          <input type="text" id="password" class="form-control"placeholder="Password">
+          <input type="text" id="location" class="form-control"placeholder="Location" ng-model="$ctrl.location">
+        </div>
+      </div>
+      <!-- <div class="form-group">
+        <label for="farm_image" class="control-label">Image</label>
+        <div class="">
+          <input type="text" id="farm_image" class="form-control" placeholder="Image" ng-model="$ctrl.farm_image">
+        </div>
+      </div> -->
+      <div class="form-group">
+        <label for="farm-password" class="control-label">Password</label>
+        <div class="">
+          <input type="text" id="farm-password" class="form-control"placeholder="Password" ng-model="$ctrl.farm_password">
         </div>
       </div>
       <div class="form-group">
         <div class="">
           <div class=""> Where do you sell? <br>
-            <label>
-              <input type="checkbox"> U-District
-            </label>
-            <label>
-              <input type="checkbox"> Capitol Hill
-            </label>
-            <label>
-              <input type="checkbox"> West Seattle
-            </label>
-            <label>
-              <input type="checkbox"> Columbia City
-            </label>
-            <label>
-              <input type="checkbox"> Lake City
-            </label>
-            <label>
-              <input type="checkbox"> Phinney
-            </label>
-            <label>
-              <input type="checkbox"> Magnolia
+            <label ng-repeat="market in $ctrl.allMarkets">
+              <input type="checkbox" ng-model="market.checked" value="{{market.checked}}"> {{market.market_name}}
             </label>
           </div>
         </div>

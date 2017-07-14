@@ -10,29 +10,29 @@
         <li role="presentation" class="active">
           <input type="search" class="form-control input-sm search-form" ng-model="filterInput" placeholder="Filter">
         </li>
-        <!-- <div class="form-inline">
+        <div class="form-inline">
           <label for="sort">Farm</label>
-          <select class="form-control" ng-model="filterInput" id="sort">
-            <option ng-repeat="farm in $ctrl.farms | filter:filterInput"><p>{{farm.farm_name}}</p></option>
+          <select class="form-control" ng-model="$ctrl.farmName" id="sort">
+            <option ng-repeat="farm in $ctrl.farms" value="{{farm.id}}"><p>{{farm.farm_name}}</p></option>
           </select>
         </div>
-        <div class="form-inline">
+        <!-- <div class="form-inline">
           <label for="sort">Market</label>
-          <select class="form-control" ng-model="filterInput" id="sort">
-            <option ng-repeat="market in $ctrl.markets | filter:filterInput"><p>{{market.market_name}}</p></option>
+          <select class="form-control" ng-model="$ctrl.marketName" id="sort">
+            <option ng-repeat="market in $ctrl.markets"><p>{{market.market_name}}</p></option>
           </select>
         </div> -->
         <div class="form-inline">
           <label for="sort">Product</label>
-          <select class="form-control" ng-model="filterInput" id="sort">
-            <option ng-repeat="product in $ctrl.products | filter:filterInput"><p>{{product.type}}</p></option>
+          <select class="form-control" ng-model="$ctrl.productType" id="sort">
+            <option ng-repeat="product in $ctrl.products" value="{{product.type}}"><p>{{product.type}}</p></option>
           </select>
         </div>
       </ul>
   </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div class="col-sm-4" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:filterInput">
+      <div class="col-sm-4" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType}">
         <img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="list-image">
       </div>
     </div>

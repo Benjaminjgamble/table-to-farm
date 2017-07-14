@@ -30,4 +30,25 @@ function getProductsByFarm (req, res) {
   })
 }
 
-module.exports = { getPurveyor, getProductsByFarm, getFarms }
+function farmSignUp (req, res) {
+  console.log('in controller', req.body);
+  let newFarm = req.body
+  let marketArr = req.body.atMarkets
+  console.log('marketArr', marketArr);
+  delete newFarm.atMarkets
+  farm.signUp(newFarm)
+  .then((returnedFarm) => {
+    console.log('returnedFarm', returnedFarm[0]);
+    newFarm = returnedFarm;
+    return farm.farmMarketJoin(marketArr, returnedFarm[0].id)
+  })
+  .then((insertedFarmMarkets) => {
+    newFarm.markets = insertedFarmMarkets;
+    console.log(newFarm);
+    res.json(newFarm)
+  }).catch((err) => {
+    console.log(err);
+  })
+}
+
+module.exports = { getPurveyor, getProductsByFarm, getFarms, farmSignUp }

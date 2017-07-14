@@ -8,6 +8,12 @@ class Users {
     return knex('users')
   }
 
+  static signUp (newUser) {
+    return knex('users')
+    .insert(newUser)
+    .returning('*')
+  }
+
 }
 
 module.exports = Users

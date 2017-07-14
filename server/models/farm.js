@@ -20,6 +20,26 @@ class Farms {
     .where('farm_id', id)
   }
 
+  static signUp (newFarm) {
+    return knex('farms')
+    .insert(newFarm)
+    .returning('*')
+  }
+
+  static farmMarketJoin (marketArr, newFarmId) {
+    let promises = marketArr.map((id) => {
+      return knex('farms_markets')
+      .insert({
+        farm_id: newFarmId,
+        market_id: id
+      })
+      .returning('*')
+    })
+
+    return Promise.all(promises)
+
+  }
+
 }
 
 module.exports = Farms

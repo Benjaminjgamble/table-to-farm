@@ -17,6 +17,8 @@ router.get('/farm/:id', farm.getProductsByFarm)
 router.get('/products/:id', products.getProductById)
 router.patch('/products/:id/edit', products.editProductById)
 router.post('/products', products.postProduct)
+router.post('/signup', users.userSignUp)
+router.post('/farmsignup', farm.farmSignUp)
 router.post('/cloudinary', products.cloudinaryUpload)
 
 module.exports = router;
