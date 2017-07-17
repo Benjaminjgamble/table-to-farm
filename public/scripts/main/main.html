@@ -1,11 +1,6 @@
-<div id="jumbotron" class="jumbotron">
-  <h1>Welcome!</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim atat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru.</p>
-  <button id="jumbotron-btn" type="button" name="button">Sign Up</button>
-</div>
 <div class="container-fluid">
   <div class="row">
-    <h3>Filter By:</h3>
+    <h3>Filter:</h3>
     <ul class="nav nav-pills">
         <li role="presentation" class="active">
           <input type="search" class="form-control input-sm search-form" ng-model="filterInput" placeholder="Filter">
@@ -16,12 +11,6 @@
             <option ng-repeat="farm in $ctrl.farms" value="{{farm.id}}"><p>{{farm.farm_name}}</p></option>
           </select>
         </div>
-        <!-- <div class="form-inline">
-          <label for="sort">Market</label>
-          <select class="form-control" ng-model="$ctrl.marketName" id="sort">
-            <option ng-repeat="market in $ctrl.markets"><p>{{market.market_name}}</p></option>
-          </select>
-        </div> -->
         <div class="form-inline">
           <label for="sort">Product</label>
           <select class="form-control" ng-model="$ctrl.productType" id="sort">
@@ -32,7 +21,7 @@
   </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div id="img-wrap" class="col-sm-4" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType}">
+      <div id="img-wrap" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType}">
         <img src="{{product.image}}" id="list-image">
         <p class="img-info" ng-click="$ctrl.getSingleProduct(product)">{{product.product_name}}</p>
       </div>
