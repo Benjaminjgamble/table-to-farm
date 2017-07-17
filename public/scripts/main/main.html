@@ -32,8 +32,9 @@
   </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div class="col-sm-4" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType}">
-        <img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="list-image">
+      <div id="img-wrap" class="col-sm-4" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType}">
+        <img src="{{product.image}}" id="list-image">
+        <p class="img-info" ng-click="$ctrl.getSingleProduct(product)">{{product.product_name}}</p>
       </div>
     </div>
   </div>

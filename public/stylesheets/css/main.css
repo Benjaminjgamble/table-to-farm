@@ -73,6 +73,22 @@ label {
   max-height: 40vh;
   object-fit: cover; }
 
+.img-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.53);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .7s, visibility 1s; }
+
+#img-wrap:hover .img-info {
+  visibility: visible;
+  opacity: 1; }
+
 #list-image {
   width: 25vw;
   max-height: 25vh;
