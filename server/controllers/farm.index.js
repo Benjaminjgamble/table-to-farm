@@ -21,7 +21,6 @@ function getFarms (req, res) {
 
 function getProductsByFarm (req, res) {
   let id = req.params.id
-  console.log(id);
   farm.getFarmProducts(id)
   .then((farmProducts) => {
     res.json(farmProducts)
@@ -31,20 +30,17 @@ function getProductsByFarm (req, res) {
 }
 
 function farmSignUp (req, res) {
-  console.log('in controller', req.body);
   let newFarm = req.body
   let marketArr = req.body.atMarkets
-  console.log('marketArr', marketArr);
   delete newFarm.atMarkets
+
   farm.signUp(newFarm)
   .then((returnedFarm) => {
-    console.log('returnedFarm', returnedFarm[0]);
     newFarm = returnedFarm;
     return farm.farmMarketJoin(marketArr, returnedFarm[0].id)
   })
   .then((insertedFarmMarkets) => {
     newFarm.markets = insertedFarmMarkets;
-    console.log(newFarm);
     res.json(newFarm)
   }).catch((err) => {
     console.log(err);

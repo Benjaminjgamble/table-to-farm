@@ -3,6 +3,7 @@ const cloudinary = require('cloudinary');
 
 async function getAllProducts (req, res) {
   let allProducts
+  
   try {
   allProducts = await products.getAllProducts()
     res.json(allProducts)
@@ -14,7 +15,7 @@ async function getAllProducts (req, res) {
 
 function getProductById (req, res) {
   let id = req.params.id
-  console.log('controller: getProductById', id);
+
   products.getOneProduct(id)
   .then((soloProduct) => {
     res.json(soloProduct)
@@ -25,9 +26,8 @@ function getProductById (req, res) {
 
 function editProductById (req, res) {
   let id = req.body.id
-  console.log(id);
   let body = req.body
-  console.log('controller: editProductById req = ', body);
+
   products.editProduct(id, body)
   .then((product) => {
     console.log(product)

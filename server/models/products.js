@@ -9,7 +9,6 @@ class Products {
   }
 
   static getOneProduct (id) {
-    console.log('model: getOneProduct', id);
     return knex('products')
     .where('products.id', id)
   }

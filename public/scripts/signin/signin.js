@@ -55,7 +55,6 @@
       password = vm.password
       $http.get(`${baseUrl}/api/users`)
       .then((allUsers) => {
-        console.log(allUsers);
         allUsers = allUsers.data
         let user = 'Try again!'
         allUsers.forEach((el) => {
@@ -95,7 +94,6 @@
       $http.post(`${baseUrl}/api/farmsignup`, newFarm)
       .then((signedUpFarm) => {
         vm.signedUpFarm = signedUpFarm.data
-        console.log('signed up farm', signedUpFarm);
       })
     }
 
