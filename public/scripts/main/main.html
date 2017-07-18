@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid"> -->
   <div class="row">
     <h3>Filter:</h3>
     <ul class="nav nav-pills">
@@ -20,11 +20,11 @@
       </ul>
   </div>
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-10 col-sm-offset-1">
       <div id="img-wrap" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType}">
         <img src="{{product.image}}" id="list-image">
-        <p class="img-info" ng-click="$ctrl.getSingleProduct(product)">{{product.product_name}}</p>
+        <!-- <p class="img-info" ng-click="$ctrl.getSingleProduct(product)">{{product.product_name}}</p> -->
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->

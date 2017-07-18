@@ -12,128 +12,39 @@ $font-purveyor: 'Lora', serif;
 $font-cursive: 'Abril Fatface', cursive;
 $font-marker: 'Permanent Marker', cursive;
 
-// JUMBOTRON
-#jumbotron {
-  border: 1px solid $color-lightblue;
-  background-color: $color-white;
-  text-align: center;
-  #jumbotron-btn {
-    background-color: $color-lightblue;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-}
-
-// BUTTONS
-#drop {
-  background-color: $color-lightblue;
-  border-radius: 10px;
-  color: white;
-  font-size: 16px;
-}
-ul {
-  list-style: none;
-  li {
-    display: inline-block;
-  }
-}
-
 // NAVBAR
 header {
+  margin-top: 5vh;
+  a {
+    padding: 5px;
+    cursor: default;
+    font-family: $font-marker;
+    font-size: 16px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
   ul {
-    font-size: 20px;
-    font-family: $font-main;
-    list-style: none;
+    display: inline-block;
+    float: right;
     li {
       display: inline-block;
-      float: right;
-      padding: 10px;
-    }
-    a {
-      color: $color-darkblue;
-      text-decoration: none;
-    }
-  }
-}
-
-
-@media only screen and (max-width: 640px) {
-  header {
-    position: absolute;
-    #menu-icon {
-      display: inline-block;
-    }
-    nav ul, nav:active ul {
-      display: none;
-      position: absolute;
-      padding: 20px;
-      background: blue;
-      right: 10px;
-      top: 65px;
-      width: 35%;
-    }
-    nav:hover ul {
-      display: block;
-      nav li {
-        text-align: center;
-        width: 100%;
-        padding: 15px 0;
-        margin: 0;
-
+      a {
+        font-family: $font-purveyor;
+        font-size: 16px;
       }
     }
   }
 }
 
-#body {
-
-  margin-top: 10px;
-  padding-top: 20px;
-  background: $color-white;
-  input {
-    font-family: $font-main;
+// MAIN PRODUCTS DIV
+#img-wrap {
+  display: inline-block;
+  #list-image {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 2px;
+    padding: 10px;
   }
-  font-family: $font-purveyor;
-}
-
-label {
-  color: $color-black;
-}
-
-#thumbnail {
-  width: 47vw;
-  max-height: 40vh;
-  object-fit: cover;
-}
-
-.img-info {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.53);
-  color: #fff;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity .7s, visibility 1s;
-}
-
-#img-wrap:hover .img-info {
-  visibility: visible;
-  opacity: 1;
-}
-
-#list-image {
-
-  width: 25vw;
-  max-height: 25vh;
-  object-fit: cover;
-  padding: 8px;
 }
