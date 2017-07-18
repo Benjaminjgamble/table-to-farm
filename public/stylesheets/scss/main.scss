@@ -1,6 +1,7 @@
 // COLORS
-$color-white: #EDE6E3;
-$color-black: #12100E;
+$color-white: #F6FFF8;
+$color-gray: #AB9B96;
+$color-black: #1F2421;
 $color-lightblue: #9FB8AD;
 $color-midblue: #83A0A0;
 $color-darkblue: #4C5F6B;
@@ -38,6 +39,10 @@ header {
       }
     }
   }
+}
+
+#body {
+  background-color: $color-white;
 }
 
 // MAIN PRODUCTS DIV
