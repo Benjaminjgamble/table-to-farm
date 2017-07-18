@@ -7,6 +7,8 @@ header {
     font-size: 16px; }
   header a:hover {
     text-decoration: none; }
+  header button {
+    cursor: default; }
   header ul {
     display: inline-block;
     float: right; }
@@ -17,10 +19,28 @@ header {
         font-size: 16px; }
 
 #img-wrap {
-  display: inline-block; }
+  display: inline-block;
+  position: relative; }
   #img-wrap #list-image {
     height: 300px;
     width: 300px;
     object-fit: cover;
     border-radius: 2px;
     padding: 10px; }
+
+.img-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(195, 195, 195, 0.41);
+  color: #12100E;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .8s, visibility .8s;
+  font-size: 24px; }
+
+#img-wrap:hover .img-info {
+  visibility: visible;
+  opacity: 1; }
