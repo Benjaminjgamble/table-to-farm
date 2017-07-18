@@ -15,6 +15,7 @@ class Products {
 
   static getComments (id) {
     return knex('comments')
+    .innerJoin('users', 'comments.user_id', 'users.id')
     .where('comments.product_id', id)
   }
 

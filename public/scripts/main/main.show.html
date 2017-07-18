@@ -5,11 +5,12 @@
     <h3>{{$ctrl.singleProduct.description}}</h3>
   </div>
 </div>
-<h4>Comments</h4>
-<div class="comments" ng-repeat="comment in $ctrl.singleProduct.comments">
-  <p>{{comment.comment}}</p>
-</div>
 <div class="col-sm-6" ng-repeat="producer in $ctrl.productsProducer">
   <a href="/farm/{{producer.farm_id}}">{{producer.farm_name}}</a>
   <a href="/{{producer.market_id}}">{{producer.market_name}}</a>
+</div>
+<h4>Comments</h4>
+<div class="comments" ng-repeat="comment in $ctrl.singleProduct.comments">
+  <p>{{comment.first_name}}</p>
+  <p>{{comment.comment}}</p>
 </div>

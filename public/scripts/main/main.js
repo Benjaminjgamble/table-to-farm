@@ -13,7 +13,6 @@
     vm.getSingleProduct = getSingleProduct
 
     function $onInit () {
-
       productsService.getAllProducts()
       .then(() => {
         vm.products = productsService.products;
