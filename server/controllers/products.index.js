@@ -1,5 +1,6 @@
 const products = require('../models/products.js')
 const cloudinary = require('cloudinary');
+const users = require('../models/users.js');
 
 async function getAllProducts (req, res) {
   let allProducts
@@ -70,6 +71,18 @@ function postProduct (req, res) {
   })
 }
 
+function postComment (req, res) {
+  let newComment = req.body
+  console.log('controller new comment = ', newComment);
+  users.postComment(newComment)
+  .then((theComment) => {
+    console.log('response from query', theComment);
+    res.json(theComment)
+  }).catch((err) => {
+    console.error(err);
+  })
+}
+
 function cloudinaryUpload (req, res) {
   cloudinary.uploader.upload(req.body.file, function(result) {
     cloudinary.url('brughwtjzn2ocl1etpa0.jpg')
@@ -79,4 +92,4 @@ function cloudinaryUpload (req, res) {
 
 
 
-module.exports = { getAllProducts, postProduct, cloudinaryUpload, getProductById, editProductById, getCommentsByProductId, deleteProduct }
+module.exports = { getAllProducts, postProduct, cloudinaryUpload, getProductById, editProductById, getCommentsByProductId, deleteProduct, postComment }

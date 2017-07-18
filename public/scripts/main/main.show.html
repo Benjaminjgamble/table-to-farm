@@ -6,8 +6,8 @@
   </div>
 </div>
 <div class="col-sm-6" ng-repeat="producer in $ctrl.productsProducer">
-  <a href="/farm/{{producer.farm_id}}">{{producer.farm_name}}</a>
-  <a href="/{{producer.market_id}}">{{producer.market_name}}</a>
+  <a ui-sref="/farm/{{producer.farm_id}}">{{producer.farm_name}}</a>
+  <a ui-sref="/markets/{{producer.market_id}}">{{producer.market_name}}</a>
 </div>
 <h4>Comments</h4>
 <div class="comments" ng-repeat="comment in $ctrl.singleProduct.comments">
@@ -15,3 +15,10 @@
   <p>{{comment.comment}}</p>
   <p>{{comment.created_at}}</p>
 </div>
+
+<form class="comment-form" ng-submit="$ctrl.addComment()">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="comment here" ng-model="$ctrl.newComment">
+  </div>
+  <button type="submit" name="button">Add a Comment</button>
+</form>

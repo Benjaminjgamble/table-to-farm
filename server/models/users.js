@@ -14,6 +14,12 @@ class Users {
     .returning('*')
   }
 
+  static postComment (newComment) {
+    return knex('comments')
+    .insert(newComment)
+    .returning('*')
+  }
+
 }
 
 module.exports = Users
