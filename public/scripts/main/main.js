@@ -11,7 +11,7 @@
     const vm = this
     vm.$onInit = $onInit
     vm.getSingleProduct = getSingleProduct
-    vm.party = party;
+    vm.dropFilter = dropFilter;
 
     function $onInit () {
       vm.dropDown = []
@@ -24,7 +24,6 @@
             if (vm.dropDown.indexOf(product.type) === -1) {
                 vm.dropDown.push(product.type)
             }
-            console.log(vm.dropDown);
         })
       }).catch((err) => {
         console.error(err);
@@ -46,8 +45,7 @@
 
     }
 
-    function party() {
-      console.log(vm.products);
+    function dropFilter() {
       vm.products.forEach((product) => {
           if (vm.dropDown.indexOf(product) === -1) {
               vm.dropDown.push(product)

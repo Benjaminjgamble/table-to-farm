@@ -17,9 +17,7 @@
       vm.singleProduct = productsService.singleProduct
       vm.singleProduct.comments.forEach((comment) => {
         comment.created_at = moment(comment.created_at).format('dddd MMMM LT')
-        console.log(comment.created_at);
       })
-      console.log(vm.singleProduct);
       vm.farms = productsService.farms
       vm.farmsMarkets = productsService.farmsMarkets
       vm.markets = productsService.markets
@@ -41,7 +39,6 @@
       .then((theComment) => {
         return productsService.getProductById(vm.singleProduct.id)
       }).then((response) => {
-        console.log(response);
         vm.singleProduct.comments = response.comments
       })
     }
