@@ -10,20 +10,22 @@
   function controller (baseUrl, $http, $state, productsService){
 
     const vm = this
+    vm.allFarms = productsService.farms
     vm.allMarkets
     vm.email
     vm.password
+    vm.farmId
     vm.$onInit = $onInit
     vm.showUserSignUp = showUserSignUp
     vm.showPurveyorSignUp = showPurveyorSignUp
-    vm.getAllFarms = getAllFarms
+    vm.authorizeFarmer = authorizeFarmer
     vm.getAllUsers = getAllUsers
     vm.userSignUp = userSignUp
     vm.farmSignUp = farmSignUp
 
 
     function $onInit () {
-      vm.showUser
+      vm.showUser = true
       vm.showPurveyor
       vm.allMarkets = productsService.markets
     }
@@ -47,6 +49,7 @@
       $http.post(`${baseUrl}/api/signup`, newUser)
       .then((signedUpUser) => {
         vm.signedUpUser = signedUpUser.data
+        $state.go('main')
       })
     }
 
@@ -56,15 +59,27 @@
       $http.get(`${baseUrl}/api/users`)
       .then((allUsers) => {
         allUsers = allUsers.data
-        let user = 'Try again!'
         allUsers.forEach((el) => {
           if(el.email === email && el.password === password) {
             user = el
             console.log(`Welcome ${el.first_name}!`);
-            return user
+            vm.user = el
+            $state.go('main')
           }
-          return user
         })
+      })
+    }
+
+    function authorizeFarmer (email, password) {
+      email = vm.email
+      password = vm.password
+      farms = vm.allFarms
+      farms.forEach((farm) => {
+        if(farm.email === email && farm.password === password) {
+          vm.farmId = farm.id
+          vm.farm = farm
+          $state.go('farm')
+        }
       })
     }
 
@@ -94,12 +109,8 @@
       $http.post(`${baseUrl}/api/farmsignup`, newFarm)
       .then((signedUpFarm) => {
         vm.signedUpFarm = signedUpFarm.data
+        $state.go('farm')
       })
-    }
-
-
-    function getAllFarms () {
-
     }
 
   }
