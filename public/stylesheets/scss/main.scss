@@ -16,6 +16,7 @@ $font-marker: 'Permanent Marker', cursive;
 // NAVBAR
 header {
   margin-top: 5vh;
+  margin-bottom: 10vh;
   a {
     padding: 5px;
     cursor: default;
@@ -71,6 +72,7 @@ header {
   opacity: 0;
   transition: opacity .8s, visibility .8s;
   font-size: 24px;
+  text-align: center;
 }
 
 #img-wrap:hover .img-info {

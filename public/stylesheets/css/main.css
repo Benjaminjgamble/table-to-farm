@@ -1,5 +1,6 @@
 header {
-  margin-top: 5vh; }
+  margin-top: 5vh;
+  margin-bottom: 10vh; }
   header a {
     padding: 5px;
     cursor: default;
@@ -42,7 +43,8 @@ header {
   visibility: hidden;
   opacity: 0;
   transition: opacity .8s, visibility .8s;
-  font-size: 24px; }
+  font-size: 24px;
+  text-align: center; }
 
 #img-wrap:hover .img-info {
   visibility: visible;
