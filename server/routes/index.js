@@ -9,6 +9,7 @@ const cloudinary = require('cloudinary')
 /* GET home page. */
 router.get('/farm', farm.getPurveyor)
 router.get('/farms', farm.getFarms)
+router.get('/comments/:id', products.getCommentsByProductId)
 router.get('/farms_markets', markets.farmsMarketsJoin)
 router.get('/markets', markets.getAll)
 router.get('/users', users.getAllUsers)

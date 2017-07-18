@@ -13,7 +13,8 @@
     vm.productsProducer = []
 
     function $onInit () {
-      vm.singleProduct = productsService.singleProduct[0]
+      vm.singleProduct = productsService.singleProduct
+      console.log(vm.singleProduct);
       vm.farms = productsService.farms
       vm.farmsMarkets = productsService.farmsMarkets
       vm.markets = productsService.markets

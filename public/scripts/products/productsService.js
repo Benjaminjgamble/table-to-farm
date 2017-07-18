@@ -33,10 +33,15 @@
     }
 
     this.getProductById = function (id) {
+      let oneProduct;
       return $http.get(`${baseUrl}/api/products/${id}`)
       .then((product) => {
-        this.singleProduct = product.data
+        oneProduct = product.data[0]
         this.singleProductId = product.data.id
+        return $http.get(`${baseUrl}/api/comments/${id}`)
+      }).then((comments) => {
+        oneProduct.comments = comments.data
+        this.singleProduct = oneProduct
         return this.singleProduct
       })
     }

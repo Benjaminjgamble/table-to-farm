@@ -3,7 +3,7 @@ const cloudinary = require('cloudinary');
 
 async function getAllProducts (req, res) {
   let allProducts
-  
+
   try {
   allProducts = await products.getAllProducts()
     res.json(allProducts)
@@ -22,6 +22,17 @@ function getProductById (req, res) {
   }).catch((err) => {
     console.error(err);
   })
+}
+
+function getCommentsByProductId (req, res) {
+  let id = req.params.id
+  console.log('inside comtroller getting comments', id);
+  products.getComments(id)
+  .then((comments) => {
+    console.log(comments);
+    res.json(comments)
+  })
+
 }
 
 function editProductById (req, res) {
@@ -57,4 +68,4 @@ function cloudinaryUpload (req, res) {
 
 
 
-module.exports = { getAllProducts, postProduct, cloudinaryUpload, getProductById, editProductById }
+module.exports = { getAllProducts, postProduct, cloudinaryUpload, getProductById, editProductById, getCommentsByProductId }

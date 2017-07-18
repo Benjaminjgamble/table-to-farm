@@ -13,6 +13,11 @@ class Products {
     .where('products.id', id)
   }
 
+  static getComments (id) {
+    return knex('comments')
+    .where('comments.product_id', id)
+  }
+
   static postProduct (newProduct) {
     return knex('products')
     .insert(newProduct)
