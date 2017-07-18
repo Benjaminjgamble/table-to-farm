@@ -16,6 +16,7 @@
     vm.postProduct = postProduct
     vm.apiRequest = apiRequest
     vm.getSingleProduct = getSingleProduct
+    vm.deleteProduct = deleteProduct
 
     function $onInit () {
       vm.products = productsService.products
@@ -28,6 +29,20 @@
       .then(() => {
         vm.singleProduct = productsService.singleProduct
         $state.go('editproduct', { id })
+      })
+    }
+
+    function deleteProduct (product) {
+      let id = product.id
+      productsService.getProductById(id)
+      .then(() => {
+        productToDelete = productsService.singleProduct.id
+        return $http.delete(`${baseUrl}/api/products/${productToDelete}`)
+      }).then(() => {
+        console.log(`Product number ${id} has been removed`);
+        return vm.getProductsByFarm()
+      }).then((data) => {
+        vm.farmProducts = data
       })
     }
 

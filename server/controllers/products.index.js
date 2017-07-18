@@ -24,6 +24,17 @@ function getProductById (req, res) {
   })
 }
 
+function deleteProduct (req, res) {
+  let id = req.params.id
+
+  products.deleteProduct(id)
+  .then((a) => {
+    res.json(a)
+  }).catch((err) => {
+    console.error(err);
+  })
+}
+
 function getCommentsByProductId (req, res) {
   let id = req.params.id
   console.log('inside comtroller getting comments', id);
@@ -68,4 +79,4 @@ function cloudinaryUpload (req, res) {
 
 
 
-module.exports = { getAllProducts, postProduct, cloudinaryUpload, getProductById, editProductById, getCommentsByProductId }
+module.exports = { getAllProducts, postProduct, cloudinaryUpload, getProductById, editProductById, getCommentsByProductId, deleteProduct }

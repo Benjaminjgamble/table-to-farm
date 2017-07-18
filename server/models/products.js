@@ -31,6 +31,12 @@ class Products {
     .where({ id })
   }
 
+  static deleteProduct (id) {
+    return knex('products')
+    .where('products.id', id)
+    .del()
+  }
+
 }
 
 module.exports = Products
