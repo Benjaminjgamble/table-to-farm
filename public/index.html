@@ -23,9 +23,8 @@
   <script defer src="./scripts/products/productsService.js"></script>
   <script defer src="./scripts/farm/farm.landing.js"></script>
   <script defer src="./scripts/farm/farm.edit.js"></script>
-  <script defer src="./scripts/main/farm.bio.js"></script>
+  <script defer src="./scripts/main/farms.index.js"></script>
   <script defer src="./scripts/main/markets.index.js"></script>
-  <script defer src="./scripts/main/markets.one.js"></script>
 <!-- REMOVES THE # FROM THE BASE URL -->
   <base href="/">
 </head>
@@ -49,16 +48,17 @@
   <div class="col-sm-10 col-sm-offset-1">
   <header>
     <a href="/">Table to Farm</a>
-      <ul>
-        <li><a href="/main">/main</a></li>
-        <li><a href="/farm">/farm</a></li>
-        <li><a href="/farms">/farms</a></li>
-        <li><a href="/farm/:id/edit">/farm/:id/edit</a></li>
-        <li><a href="/products">/products</a></li>
-        <li><button type="button" name="button" ui-sref="farms">Farms</button></li>
-        <li><button type="button" name="button" ui-sref="markets">Markets</button></li>
-        <li><button type="button" name="button" ui-sref="signin">Sign In</button></li>
-      </ul>
+    <ul>
+      <li><a href="/main">/main</a></li>
+      <li><a href="/markets/:id">/markets/:id</a></li>
+      <li><a href="/farm">/farm</a></li>
+      <li><a href="/farm/:id">/farm/:id</a></li>
+      <li><a href="/farm/:id/edit">/farm/:id/edit</a></li>
+      <li><a href="/products">/products</a></li>
+      <button type="button" name="button" ui-sref="farms"><li>Farms</li></button>
+      <button type="button" name="button" ui-sref="markets"><li>Markets</li></button>
+      <button type="button" name="button" ui-sref="signin"><li>Sign In</li></button>
+    </ul>
   </header>
   </div>
   </div>

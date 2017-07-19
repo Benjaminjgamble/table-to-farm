@@ -1,5 +1,3 @@
-
-
 (function() {
   angular.module('app').config(config).run(function (productsService) {
     productsService.getAllProducts().then(function () {
@@ -18,15 +16,22 @@
     })
 
     .state({
-      name: 'markets',
-      url: '/markets',
-      component: 'markets.index'
+      name: 'main',
+      url: '/main',
+      component: 'main'
+    })
+
+
+    .state({
+      name: 'signin',
+      url: '/signin',
+      component: 'signin'
     })
 
     .state({
-      name: 'onemarket',
-      url: '/markets/:id',
-      component: 'markets.one'
+      name: 'markets',
+      url: '/markets',
+      component: 'markets.index'
     })
 
     .state({
@@ -54,21 +59,9 @@
     })
 
     .state({
-      name: 'farmbio',
-      url: '/farm/:id',
-      component: 'farm.bio'
-    })
-
-    .state({
-      name: 'main',
-      url: '/main',
-      component: 'main'
-    })
-
-    .state({
-      name: 'signin',
-      url: '/signin',
-      component: 'signin'
+      name: 'farms',
+      url: '/farms',
+      component: 'farms'
     })
 
   }
