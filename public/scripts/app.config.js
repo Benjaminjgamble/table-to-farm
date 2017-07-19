@@ -1,4 +1,5 @@
 
+
 (function() {
   angular.module('app').config(config).run(function (productsService) {
     productsService.getAllProducts().then(function () {
@@ -20,6 +21,12 @@
       name: 'markets',
       url: '/markets',
       component: 'markets.index'
+    })
+
+    .state({
+      name: 'onemarket',
+      url: '/markets/:id',
+      component: 'markets.one'
     })
 
     .state({
@@ -47,9 +54,9 @@
     })
 
     .state({
-      name: 'farms',
-      url: '/farms',
-      component: 'farms'
+      name: 'farmbio',
+      url: '/farm/:id',
+      component: 'farm.bio'
     })
 
     .state({
