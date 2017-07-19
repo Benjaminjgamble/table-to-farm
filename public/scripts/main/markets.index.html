@@ -1,1 +1,10 @@
 <h1>markets.index</h1>
+
+<div class="all-markets" ng-repeat="market in $ctrl.markets">
+  <ul>
+    <li><h3>{{market.market_name}}</h3></li>
+    <li><p>{{market.hours_open}}</p></li>
+    <li><p>{{market.dates_open}}</p></li>
+    <li><p>{{market.market_location}}</p></li>
+  </ul>
+</div>

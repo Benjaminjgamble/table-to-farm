@@ -15,6 +15,7 @@
       vm.farms = productsService.farms
       vm.farmsMarkets = productsService.farmsMarkets
       vm.markets = productsService.markets
+      console.log(vm.markets);
     }
 
   }
