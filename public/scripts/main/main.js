@@ -14,7 +14,6 @@
     vm.dropFilter = dropFilter;
 
     function $onInit () {
-
       vm.dropDown = []
       productsService.getAllProducts()
       .then(() => {
