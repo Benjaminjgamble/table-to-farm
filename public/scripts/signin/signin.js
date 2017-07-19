@@ -22,9 +22,11 @@
     vm.getAllUsers = getAllUsers
     vm.userSignUp = userSignUp
     vm.farmSignUp = farmSignUp
+    vm.setTab = setTab
 
 
     function $onInit () {
+      vm.tab = 1
       vm.showUser = true
       vm.showPurveyor
       vm.allMarkets = productsService.markets
@@ -36,6 +38,10 @@
       } else {
         vm.showUser = true
       }
+    }
+
+    function setTab (num) {
+      vm.tab = num
     }
 
     function userSignUp () {

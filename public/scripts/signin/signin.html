@@ -29,10 +29,10 @@
 
   <div class="col-sm-4 col-sm-offset-2">
     <h2 class="">Sign Up</h2>
-    <button class="btn" type="button" name="button" ng-click="$ctrl.showUserSignUp()">Customer</button>
-    <button class="btn" type="button" name="button" ng-click="$ctrl.showPurveyorSignUp()">Purveyor</button>
+    <button class="btn" type="button" name="button" ng-click="$ctrl.setTab(1)">Customer</button>
+    <button class="btn" type="button" name="button" ng-click="$ctrl.setTab(2)">Purveyor</button>
     <!-- USER SIGN UP -->
-    <form class="form-horizontal" ng-show="$ctrl.showUser" ng-submit="$ctrl.userSignUp()">
+    <form class="form-horizontal" ng-if="$ctrl.tab == 1" ng-submit="$ctrl.userSignUp()">
       <div class="form-group">
         <label for="first-name" class="control-label">First Name</label>
         <div class="">
@@ -70,7 +70,7 @@
       </div>
     </form>
     <!-- PURVEYOR SIGN UP -->
-    <form class="form-horizontal" ng-show="$ctrl.showPurveyor" ng-submit="$ctrl.farmSignUp()">
+    <form class="form-horizontal" ng-if="$ctrl.tab == 2" ng-submit="$ctrl.farmSignUp()">
       <div class="form-group">
         <label for="farm-name" class="control-label">Farm Name</label>
         <div class="">

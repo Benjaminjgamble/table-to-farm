@@ -92,6 +92,7 @@
             vm.productName = resArr[0].class
             vm.type = resArr[1].class
             vm.description = resArr[0].type_hierarchy
+            vm.description = vm.description.replace(/\W/g, ' ')
 
           }).catch((err) => {
             console.log(err);

@@ -16,7 +16,7 @@
     function $onInit () {
       vm.singleProduct = productsService.singleProduct
       vm.singleProduct.comments.forEach((comment) => {
-        comment.created_at = moment(comment.created_at).format('dddd MMMM LT')
+        comment.commentCreated = moment(comment.commentCreated).format('dddd MMMM LT')
       })
       vm.farms = productsService.farms
       vm.farmsMarkets = productsService.farmsMarkets
@@ -35,6 +35,7 @@
         user_id: 2,
         product_id: vm.singleProduct.id
       }
+      delete vm.newComment
       return $http.post(`${baseUrl}/api/comments`, commentToAdd)
       .then((theComment) => {
         return productsService.getProductById(vm.singleProduct.id)
@@ -42,7 +43,8 @@
         console.log('added comment response', response);
         vm.singleProduct = response
             response.comments.forEach((comment) => {
-            comment.created_at = moment(comment.created_at).format('dddd MMMM LT')
+              console.log('each comment', comment);
+            comment.commentCreated = moment(comment.commentCreated).format('dddd MMMM LT')
           })
       })
     }
