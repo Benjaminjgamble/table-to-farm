@@ -14,7 +14,8 @@
     vm.editProduct = editProduct
 
     function $onInit () {
-      vm.singleProduct = productsService.singleProduct[0]
+      vm.singleProduct = productsService.singleProduct
+      console.log(vm.singleProduct);
     }
 
     function editProduct () {

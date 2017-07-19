@@ -25,6 +25,7 @@
 
     function getSingleProduct (product) {
       let id = product.id
+      console.log('product', product, 'id', id);
       productsService.getProductById(id)
       .then(() => {
         vm.singleProduct = productsService.singleProduct

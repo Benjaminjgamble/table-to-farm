@@ -14,10 +14,12 @@
     vm.dropFilter = dropFilter;
 
     function $onInit () {
+
       vm.dropDown = []
       productsService.getAllProducts()
       .then(() => {
         vm.products = productsService.products;
+        console.log('all the products',  vm.products);
       })
       .then(() => {
         vm.products.forEach((product) => {
@@ -25,22 +27,27 @@
                 vm.dropDown.push(product.type)
             }
         })
+
+        return  productsService.getAllFarms()
       }).catch((err) => {
         console.error(err);
       })
-
-      productsService.getAllFarms()
       .then(() => {
         vm.farms = productsService.farms
+
+        return productsService.farmsMarketsJoin()
       }).catch((err) => {
         console.error(err);
       })
-
-      productsService.farmsMarketsJoin()
       .then(() => {
         vm.farmsMarkets = productsService.farmsMarkets
       }).catch((err) => {
         console.error(err);
+      }).then(() => {
+        return productsService.getAllMarkets()
+      }).then(() => {
+        productsService.getAllProductsWithMarkets()
+
       })
 
     }

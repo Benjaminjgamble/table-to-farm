@@ -53,6 +53,21 @@
         return this.farmsMarkets
       })
     }
+
+    this.getAllProductsWithMarkets = function () {
+      this.products.forEach((product) => {
+        product.markets = []
+        this.farmsMarkets.forEach(farmMarket => {
+          if (farmMarket.farm_id === product.farm_id) {
+            this.markets.forEach(market => {
+              if (market.id === farmMarket.market_id) {
+                product.markets.push(market)
+              }
+            })
+          }
+        })
+      })
+    }
   }
 
 })()
