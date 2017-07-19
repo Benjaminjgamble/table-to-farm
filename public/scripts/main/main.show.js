@@ -39,7 +39,11 @@
       .then((theComment) => {
         return productsService.getProductById(vm.singleProduct.id)
       }).then((response) => {
-        vm.singleProduct.comments = response.comments
+        console.log('added comment response', response);
+        vm.singleProduct = response
+            response.comments.forEach((comment) => {
+            comment.created_at = moment(comment.created_at).format('dddd MMMM LT')
+          })
       })
     }
 
