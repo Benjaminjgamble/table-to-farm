@@ -23,12 +23,6 @@
     })
 
     .state({
-      name: 'onemarket',
-      url: '/markets/:id',
-      component: 'markets.one'
-    })
-
-    .state({
       name: 'products',
       url: '/products',
       component: 'products'
@@ -53,9 +47,9 @@
     })
 
     .state({
-      name: 'farmbio',
-      url: '/farm/:id',
-      component: 'farm.bio'
+      name: 'farms',
+      url: '/farms',
+      component: 'farms'
     })
 
     .state({
