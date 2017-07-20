@@ -9,6 +9,7 @@
   function productsService (baseUrl, $http) {
 
      this.getAllProducts = () => {
+       console.log(baseUrl);
       return $http.get(`${baseUrl}/api/products`)
       .then((products) => {
         this.products = products.data
