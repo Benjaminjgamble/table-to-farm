@@ -38,7 +38,7 @@
       productsService.getProductById(id)
       .then(() => {
         productToDelete = productsService.singleProduct.id
-        return $http.delete(`${baseUrl}/api/products/${productToDelete}`)
+        return $http.delete(`/api/products/${productToDelete}`)
       }).then(() => {
         console.log(`Product number ${id} has been removed`);
         return vm.getProductsByFarm()
@@ -48,7 +48,7 @@
     }
 
     function getProductsByFarm () {
-      $http.get(`${baseUrl}/api/farm/1`)
+      $http.get(`/api/farm/1`)
       .then((result) => {
         vm.farmProducts = result.data
       }).catch((err) => {
@@ -67,7 +67,7 @@
         farm_id: 1
       }
 
-      $http.post(`${baseUrl}/api/products`, newProduct)
+      $http.post(`/api/products`, newProduct)
       .then((returnedProduct) => {
         vm.product_id = returnedProduct.data[0].id
         vm.getProductsByFarm()
@@ -82,7 +82,7 @@
       const reader = new FileReader()
 
       reader.onload = (event) => {
-        $http.post(`${baseUrl}/api/cloudinary`, {file: reader.result})
+        $http.post(`/api/cloudinary`, {file: reader.result})
         .then((response) => {
           let newImage = response.data.url
           vm.image_url = newImage

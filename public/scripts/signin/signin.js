@@ -52,7 +52,7 @@
         password: vm.user_password,
         is_seller: false
       }
-      $http.post(`${baseUrl}/api/signup`, newUser)
+      $http.post(`/api/signup`, newUser)
       .then((signedUpUser) => {
         vm.signedUpUser = signedUpUser.data
         $state.go('main')
@@ -62,7 +62,7 @@
     function getAllUsers (email, password) {
       email = vm.email
       password = vm.password
-      $http.get(`${baseUrl}/api/users`)
+      $http.get(`/api/users`)
       .then((allUsers) => {
         allUsers = allUsers.data
         allUsers.forEach((el) => {
@@ -112,7 +112,7 @@
           return el.id
         })
       }
-      $http.post(`${baseUrl}/api/farmsignup`, newFarm)
+      $http.post(`/api/farmsignup`, newFarm)
       .then((signedUpFarm) => {
         vm.signedUpFarm = signedUpFarm.data
         $state.go('farm')

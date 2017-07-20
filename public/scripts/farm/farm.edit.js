@@ -30,7 +30,7 @@
         farm_id: 1
       }
 
-      $http.patch(`${baseUrl}/api/products/:id/edit`, editedProduct)
+      $http.patch(`/api/products/:id/edit`, editedProduct)
       .then((product) => {
         $state.go('farm')
       })

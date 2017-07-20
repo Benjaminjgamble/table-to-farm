@@ -36,7 +36,7 @@
         product_id: vm.singleProduct.id
       }
       delete vm.newComment
-      return $http.post(`${baseUrl}/api/comments`, commentToAdd)
+      return $http.post(`/api/comments`, commentToAdd)
       .then((theComment) => {
         return productsService.getProductById(vm.singleProduct.id)
       }).then((response) => {

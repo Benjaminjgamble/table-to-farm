@@ -18,7 +18,7 @@
     }
 
     this.getAllFarms = () => {
-      return $http.get(`${baseUrl}/api/farms`)
+      return $http.get(`/api/farms`)
       .then((farms) => {
         this.farms = farms.data
         return this.farms
@@ -26,7 +26,7 @@
     }
 
     this.getAllMarkets = () => {
-      return $http.get(`${baseUrl}/api/markets`)
+      return $http.get(`/api/markets`)
       .then((markets) => {
         this.markets = markets.data
         return this.markets
@@ -35,11 +35,11 @@
 
     this.getProductById = (id) => {
       let oneProduct;
-      return $http.get(`${baseUrl}/api/products/${id}`)
+      return $http.get(`/api/products/${id}`)
       .then((product) => {
         oneProduct = product.data[0]
         this.singleProductId = product.data.id
-        return $http.get(`${baseUrl}/api/comments/${id}`)
+        return $http.get(`/api/comments/${id}`)
       }).then((comments) => {
         oneProduct.comments = comments.data
         this.singleProduct = oneProduct
@@ -48,7 +48,7 @@
     }
 
     this.farmsMarketsJoin = () => {
-      return $http.get(`${baseUrl}/api/farms_markets`)
+      return $http.get(`/api/farms_markets`)
       .then((farmsMarkets) => {
         this.farmsMarkets = farmsMarkets.data
         return this.farmsMarkets
