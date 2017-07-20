@@ -11,20 +11,20 @@
     const vm = this
     vm.$onInit = $onInit
     vm.getSingleProduct = getSingleProduct
-    vm.dropFilter = dropFilter;
+    vm.dropFilter = dropFilter
 
     function $onInit () {
       vm.dropDown = []
+
       productsService.getAllProducts()
       .then(() => {
-        vm.products = productsService.products;
-        console.log('all the products',  vm.products);
+        vm.products = productsService.products
       })
       .then(() => {
         vm.products.forEach((product) => {
-            if (vm.dropDown.indexOf(product.type) === -1) {
-                vm.dropDown.push(product.type)
-            }
+          if (vm.dropDown.indexOf(product.type) === -1) {
+            vm.dropDown.push(product.type)
+          }
         })
 
         return  productsService.getAllFarms()
@@ -40,38 +40,28 @@
           productsService.getAllProductsWithMarkets()
 
           vm.markets = productsService.products
-            .map(product => product.markets) // get all the markets from products
-            .reduce((a,b) => a.concat(b)) // flatten the array into all markets
-            .reduce((acc, market) => { // unique markets
-              const match = acc.filter(m => m.id === market.id)[0]
+          .map(product => product.markets) // get all the markets from products
+          .reduce((a,b) => a.concat(b)) // flatten the array into all markets
+          .reduce((acc, market) => { // unique markets
+            const match = acc.filter(m => m.id === market.id)[0]
 
-              if (!match) acc.push(market)
-              return acc
-            }, [])
+            if (!match) acc.push(market)
+            return acc
+          }, [])
         })
       }).catch((err) => {
-        console.error(err);
+        console.error(err)
       })
 
     }
 
     function dropFilter() {
       vm.products.forEach((product) => {
-          if (vm.dropDown.indexOf(product) === -1) {
-              vm.dropDown.push(product)
-          }
-          console.log(vm.dropDown);
+        if (vm.dropDown.indexOf(product) === -1) {
+          vm.dropDown.push(product)
+        }
       })
     }
-
-
-
-    // productsService.getAllMarkets()
-    // .then(() => {
-    //   vm.markets = productsService.markets
-    // }).catch((err) => {
-    //   console.error(err);
-    // })
 
     function getSingleProduct (product) {
       let id = product.id
@@ -83,5 +73,4 @@
     }
 
   }
-
 })()

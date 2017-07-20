@@ -23,14 +23,22 @@
     vm.userSignUp = userSignUp
     vm.farmSignUp = farmSignUp
     vm.setTab = setTab
-
+    vm.signIn = signIn
 
     function $onInit () {
       vm.tab = 1
       vm.showUser = true
       vm.showPurveyor
       vm.allMarkets = productsService.markets
-      console.log(signinService.userAuth())
+    }
+
+    function signIn () {
+      if(!vm.signingInUser.email || !vm.signingInUser.password) {
+        window.alert('that shit is bogus')
+      } else {
+        signinService.checkUserAuth(vm.signingInUser)
+        $state.go('main')
+      }
     }
 
     function showUserSignUp () {

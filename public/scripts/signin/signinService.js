@@ -9,23 +9,20 @@
   function signinService (baseUrl, $http) {
 
     this.userAuth = () => {
-      console.log('in signin service');
-      this.users = {
-        name: 'dummy user',
-        is_seller: false
-      }
-      return this.users
-      /* TODO actaully make this work
       return $http.get(`/api/users`)
       .then((users) => {
-        console.log(users);
         this.users = users.data
         return this.users
       })
-      */
     }
-    this.getUser() {
-      return this.users
+
+    this.checkUserAuth = (user) => {
+      $http.post('/api/login', user)
+      .then((loggedInUser) => {
+        this.loggedInUser = loggedInUser.data
+        return this.loggedInUser
+      })
     }
+
   }
 })()

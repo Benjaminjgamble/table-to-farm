@@ -20,6 +20,11 @@ class Farms {
     .where('farm_id', id)
   }
 
+  static login(user) {
+    return knex('farms')
+    .where('farm.email', user.email)
+  }
+
   static signUp (newFarm) {
     return knex('farms')
     .insert(newFarm)

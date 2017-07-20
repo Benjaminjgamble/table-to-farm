@@ -2,18 +2,6 @@ const products = require('../models/products.js')
 const cloudinary = require('cloudinary');
 const users = require('../models/users.js');
 
-// async function getAllProducts (req, res) {
-//   let allProducts
-//
-//   try {
-//   allProducts = await products.getAllProducts()
-//     res.json(allProducts)
-//   } catch (err) {
-//     console.error(err)
-//     res.send(err)
-//   }
-// }
-
 function getAllProducts (req, res) {
   products.getAllProducts()
   .then((allProducts) => {
@@ -48,13 +36,11 @@ function deleteProduct (req, res) {
 
 function getCommentsByProductId (req, res) {
   let id = req.params.id
-  console.log('inside comtroller getting comments', id);
+
   products.getComments(id)
   .then((comments) => {
-    console.log(comments);
     res.json(comments)
   })
-
 }
 
 function editProductById (req, res) {
@@ -63,7 +49,6 @@ function editProductById (req, res) {
 
   products.editProduct(id, body)
   .then((product) => {
-    console.log(product)
     res.json(product)
   }).catch((err) => {
     console.error(err);
@@ -83,10 +68,9 @@ function postProduct (req, res) {
 
 function postComment (req, res) {
   let newComment = req.body
-  console.log('controller new comment = ', newComment);
+  console.log(newComment);
   users.postComment(newComment)
   .then((theComment) => {
-    console.log('response from query', theComment);
     res.json(theComment)
   }).catch((err) => {
     console.error(err);

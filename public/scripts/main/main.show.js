@@ -6,8 +6,8 @@
     templateUrl: './scripts/main/main.show.html'
   })
 
-  controller.$inject = ['API_BASE_URL', '$http', '$state', 'productsService']
-  function controller (baseUrl, $http, $state, productsService){
+  controller.$inject = ['API_BASE_URL', '$http', '$state', 'productsService', 'signinService']
+  function controller (baseUrl, $http, $state, productsService, signinService){
     const vm = this
     vm.$onInit = $onInit
     vm.addComment = addComment
@@ -30,9 +30,14 @@
     }
 
     function addComment () {
+      if(!signinService.loggedInUser) {
+        window.alert('Cannot comment until logged in!')
+        $state.go('signin')
+        return
+      }
       let commentToAdd = {
         comment: vm.newComment,
-        user_id: 2,
+        user_id: signinService.loggedInUser.id,
         product_id: vm.singleProduct.id
       }
       delete vm.newComment
@@ -40,10 +45,8 @@
       .then((theComment) => {
         return productsService.getProductById(vm.singleProduct.id)
       }).then((response) => {
-        console.log('added comment response', response);
         vm.singleProduct = response
             response.comments.forEach((comment) => {
-              console.log('each comment', comment);
             comment.commentCreated = moment(comment.commentCreated).format('dddd MMMM LT')
           })
       })

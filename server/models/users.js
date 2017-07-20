@@ -20,6 +20,11 @@ class Users {
     .returning('*')
   }
 
+  static login (user) {
+    return knex('users')
+    .where('email' , user.email)
+  }
+
 }
 
 module.exports = Users
