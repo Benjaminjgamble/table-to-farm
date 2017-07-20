@@ -8,7 +8,7 @@
 
   function productsService (baseUrl, $http) {
 
-     this.getAllProducts = function () {
+     this.getAllProducts = () => {
       return $http.get(`${baseUrl}/api/products`)
       .then((products) => {
         this.products = products.data
@@ -16,7 +16,7 @@
       })
     }
 
-    this.getAllFarms = function () {
+    this.getAllFarms = () => {
       return $http.get(`${baseUrl}/api/farms`)
       .then((farms) => {
         this.farms = farms.data
@@ -24,7 +24,7 @@
       })
     }
 
-    this.getAllMarkets = function () {
+    this.getAllMarkets = () => {
       return $http.get(`${baseUrl}/api/markets`)
       .then((markets) => {
         this.markets = markets.data
@@ -32,7 +32,7 @@
       })
     }
 
-    this.getProductById = function (id) {
+    this.getProductById = (id) => {
       let oneProduct;
       return $http.get(`${baseUrl}/api/products/${id}`)
       .then((product) => {
@@ -46,7 +46,7 @@
       })
     }
 
-    this.farmsMarketsJoin = function () {
+    this.farmsMarketsJoin = () => {
       return $http.get(`${baseUrl}/api/farms_markets`)
       .then((farmsMarkets) => {
         this.farmsMarkets = farmsMarkets.data
@@ -54,14 +54,16 @@
       })
     }
 
-    this.getAllProductsWithMarkets = function () {
+    this.getAllProductsWithMarkets = () => {
       this.products.forEach((product) => {
         product.markets = []
+
         this.farmsMarkets.forEach(farmMarket => {
           if (farmMarket.farm_id === product.farm_id) {
             this.markets.forEach(market => {
               if (market.id === farmMarket.market_id) {
                 product.markets.push(market)
+                product.market_id = market.id
               }
             })
           }

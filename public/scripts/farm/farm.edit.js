@@ -15,7 +15,7 @@
 
     function $onInit () {
       vm.singleProduct = productsService.singleProduct
-      console.log(vm.singleProduct);
+      vm.comments = productsService.singleProduct.comments
     }
 
     function editProduct () {

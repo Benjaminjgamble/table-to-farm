@@ -28,25 +28,29 @@
         })
 
         return  productsService.getAllFarms()
-      }).catch((err) => {
-        console.error(err);
       })
       .then(() => {
         vm.farms = productsService.farms
 
-        return productsService.farmsMarketsJoin()
-      }).catch((err) => {
-        console.error(err);
-      })
-      .then(() => {
-        vm.farmsMarkets = productsService.farmsMarkets
-      }).catch((err) => {
-        console.error(err);
+        return productsService.farmsMarketsJoin().then(() => {
+          vm.farmsMarkets = productsService.farmsMarkets
+        })
       }).then(() => {
-        return productsService.getAllMarkets()
-      }).then(() => {
-        productsService.getAllProductsWithMarkets()
+        return productsService.getAllMarkets().then(() => {
+          productsService.getAllProductsWithMarkets()
 
+          vm.markets = productsService.products
+            .map(product => product.markets) // get all the markets from products
+            .reduce((a,b) => a.concat(b)) // flatten the array into all markets
+            .reduce((acc, market) => { // unique markets
+              const match = acc.filter(m => m.id === market.id)[0]
+
+              if (!match) acc.push(market)
+              return acc
+            }, [])
+        })
+      }).catch((err) => {
+        console.error(err);
       })
 
     }
@@ -62,12 +66,12 @@
 
 
 
-    productsService.getAllMarkets()
-    .then(() => {
-      vm.markets = productsService.markets
-    }).catch((err) => {
-      console.error(err);
-    })
+    // productsService.getAllMarkets()
+    // .then(() => {
+    //   vm.markets = productsService.markets
+    // }).catch((err) => {
+    //   console.error(err);
+    // })
 
     function getSingleProduct (product) {
       let id = product.id

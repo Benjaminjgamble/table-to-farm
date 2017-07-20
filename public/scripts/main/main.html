@@ -19,7 +19,7 @@
       <div class="form-inline">
       <select class="form-control" ng-model="$ctrl.marketName">
         <option value="">All Markets</option>
-        <option ng-repeat="market in $ctrl.markets" value="{{market.market_name}}">{{market.market_name}}</option>
+        <option ng-repeat="market in $ctrl.markets track by $index" value="{{market.id}}">{{market.market_name}}</option>
       </select>
       </div>
       <div class="form-inline">
@@ -32,7 +32,7 @@
   </div>
   <div class="row">
     <div class="col-sm-4 col-lg-10 col-lg-offset-1 col-sm-offset-1">
-      <div id="img-wrap" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType} | filter:{market_name:$ctrl.marketName}">
+      <div id="img-wrap" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType} | filter:{market_id:$ctrl.marketName}">
         <img src="{{product.image}}" id="list-image">
         <div class="img-info" ng-click="$ctrl.getSingleProduct(product)">
           <ul>

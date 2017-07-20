@@ -23,6 +23,13 @@ exports.seed = function(knex) {
         comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         created_at: new Date(),
         updated_at: new Date()
+      },{
+        id: 4,
+        user_id: 2,
+        product_id: 8,
+        comment: 'APPLES ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        created_at: new Date(),
+        updated_at: new Date()
       },
     ])
   })

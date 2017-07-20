@@ -3,6 +3,11 @@
     <div class="col-sm-6">
       <img id="thumbnail" ng-src="{{$ctrl.singleProduct.image}}" alt="image_upload"/>
     </div>
+    <div class="" ng-repeat="comment in $ctrl.comments">
+      <p>{{comment.comment}}</p>
+      <p>{{comment.commentCreated}}</p>
+      <p>{{comment.first_name}}</p>
+    </div>
     <div class="col-sm-6">
       <form ng-submit="$ctrl.editProduct(); $ctrl.getProductsByFarm()">
         <div class="form-group">
