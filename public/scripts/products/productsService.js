@@ -10,7 +10,7 @@
 
      this.getAllProducts = () => {
        console.log(baseUrl);
-      return $http.get(`${baseUrl}/api/products`)
+      return $http.get(`/api/products`)
       .then((products) => {
         this.products = products.data
         return this.products
