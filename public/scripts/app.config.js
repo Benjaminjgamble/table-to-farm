@@ -1,8 +1,12 @@
 (function() {
-  angular.module('app').config(config).run(function (productsService) {
+  angular.module('app').config(config).run(function (productsService, signinService) {
     productsService.getAllProducts().then(function () {
     })
+    signinService.inHere().then(function () {
+      
+    })
   })
+
 
   config.$inject = ['$stateProvider', '$locationProvider']
   function config($stateProvider, $locationProvider){

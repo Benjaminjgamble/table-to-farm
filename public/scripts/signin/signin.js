@@ -6,8 +6,8 @@
     templateUrl: './scripts/signin/signin.html'
   })
 
-  controller.$inject = ['API_BASE_URL', '$http', '$state', 'productsService']
-  function controller (baseUrl, $http, $state, productsService){
+  controller.$inject = ['API_BASE_URL', '$http', '$state', 'productsService', 'signinService']
+  function controller (baseUrl, $http, $state, productsService, signinService){
 
     const vm = this
     vm.allFarms = productsService.farms
@@ -30,6 +30,7 @@
       vm.showUser = true
       vm.showPurveyor
       vm.allMarkets = productsService.markets
+      console.log(signinService.userAuth())
     }
 
     function showUserSignUp () {
@@ -59,6 +60,8 @@
       })
     }
 
+
+
     function getAllUsers (email, password) {
       email = vm.email
       password = vm.password
@@ -70,6 +73,7 @@
             user = el
             console.log(`Welcome ${el.first_name}!`);
             vm.user = el
+            console.log(vm.user);
             $state.go('main')
           }
         })
