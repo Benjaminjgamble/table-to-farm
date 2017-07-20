@@ -49,3 +49,8 @@ header {
 #img-wrap:hover .img-info {
   visibility: visible;
   opacity: 1; }
+
+#thumbnail {
+  height: 300px;
+  width: 300px;
+  object-fit: cover; }
