@@ -2,16 +2,26 @@ const products = require('../models/products.js')
 const cloudinary = require('cloudinary');
 const users = require('../models/users.js');
 
-async function getAllProducts (req, res) {
-  let allProducts
+// async function getAllProducts (req, res) {
+//   let allProducts
+//
+//   try {
+//   allProducts = await products.getAllProducts()
+//     res.json(allProducts)
+//   } catch (err) {
+//     console.error(err)
+//     res.send(err)
+//   }
+// }
 
-  try {
-  allProducts = await products.getAllProducts()
+function getAllProducts (req, res) {
+  products.getAllProducts()
+  .then((allProducts) => {
     res.json(allProducts)
-  } catch (err) {
-    console.error(err)
+  }).catch((err) => {
+    console.error(err);
     res.send(err)
-  }
+  })
 }
 
 function getProductById (req, res) {
