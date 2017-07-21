@@ -21,27 +21,31 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <body id="body">
-  <div class="row">
-  <div class="col-sm-10 col-sm-offset-1">
-  <header class="navbar">
-    <a class="homelogo" href="/">Table to Farm</a>
-    <ul class="head-ul">
-      <li><a href="/main">/main</a></li>
-      <li><a href="/markets/:id">/markets/:id</a></li>
-      <li><a href="/farm">/farm</a></li>
-      <li><a href="/farm/:id">/farm/:id</a></li>
-      <li><a href="/farm/:id/edit">/farm/:id/edit</a></li>
-      <li><a href="/products">/products</a></li>
-      <button type="button" name="button" ui-sref="farms"><li>Farms</li></button>
-      <button type="button" name="button" ui-sref="markets"><li>Markets</li></button>
-      <button type="button" name="button" ui-sref="signin"><li>Sign In</li></button>
-    </ul>
-  </header>
-  </div>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <header class="navbar">
+          <a class="nav-logo" href="/">ingather</a>
+          <ul class="head-ul">
+            <!-- <li><a href="/main">/main</a></li>
+            <li><a href="/markets/:id">/markets/:id</a></li>
+            <li><a href="/farm">/farm</a></li>
+            <li><a href="/farm/:id">/farm/:id</a></li>
+            <li><a href="/farm/:id/edit">/farm/:id/edit</a></li>
+            <li><a href="/products">/products</a></li> -->
+            <li><a class="nav-link" ui-sref="farms">Farms</a></li>
+            <li><a class="nav-link" ui-sref="markets">Markets</a></li>
+            <li><a class="nav-link" ui-sref="signin">Sign In</a></li>
+          </ul>
+        </header>
+      </div>
+    </div>
+
   </div>
 <!-- APPROPRIATE VIEW IS RENDERED HERE -->
   <ui-view></ui-view>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <!-- Latest compiled and minified CSS -->
   <!-- Latest compiled and minified JavaScript -->

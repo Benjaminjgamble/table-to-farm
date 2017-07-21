@@ -20,11 +20,22 @@ header {
   a {
     padding: 5px;
     cursor: default;
-    font-family: $font-marker;
-    font-size: 16px;
+    font-family: $font-main;
+    font-size: 40px;
+    text-decoration: none;
+    color: $color-black;
+  }
+  a:visited {
+    text-decoration: none;
+    color: $color-black;
   }
   a:hover {
     text-decoration: none;
+    color: $color-gray;
+  }
+  a:active {
+    text-decoration: none;
+    color: $color-gray;
   }
   button {
     cursor: default;
@@ -34,9 +45,11 @@ header {
     float: right;
     li {
       display: inline-block;
-      a {
-        font-family: $font-purveyor;
-        font-size: 16px;
+      padding: 5px;
+      .nav-link {
+        font-family: $font-main;
+        font-size: 20px;
+        padding: 8px;
       }
     }
   }
