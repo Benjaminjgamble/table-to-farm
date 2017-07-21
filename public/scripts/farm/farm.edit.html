@@ -1,15 +1,16 @@
-<div class="row">
-  <div class="col-sm-12">
-    <div class="col-sm-6">
-      <img id="thumbnail" ng-src="{{$ctrl.singleProduct.image}}" alt="image_upload"/>
+<div class="container">
+
+  <div class="row">
+    <div class="edit-img col-sm-6">
+      <img id="medium-img" ng-src="{{$ctrl.singleProduct.image}}" alt="{{$ctrl.singleProduct.type}}"/>
     </div>
-    <div class="" ng-repeat="comment in $ctrl.comments">
+    <div class="edit-comments" ng-repeat="comment in $ctrl.comments">
       <p>{{comment.comment}}</p>
       <p>{{comment.commentCreated}}</p>
       <p>{{comment.first_name}}</p>
     </div>
-    <div class="col-sm-6">
-      <form ng-submit="$ctrl.editProduct(); $ctrl.getProductsByFarm()">
+    <div class="edit-wrapper col-sm-6">
+      <form class="edit-form" ng-submit="$ctrl.editProduct(); $ctrl.getProductsByFarm()">
         <div class="form-group">
           <label for="product_image">Upload an Image</label>
           <input onchange="angular.element(this).scope().fileNameChanged(this)" type="file" id="image">
@@ -39,4 +40,5 @@
       </form>
     </div>
   </div>
+
 </div>

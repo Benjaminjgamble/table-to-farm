@@ -1,37 +1,40 @@
+<div class="container">
+
 <div class="row">
-  <div class="col-sm-4 col-sm-offset-1">
+  <div class="signin-wrapper col-sm-6">
     <h2 class="">Sign In</h2>
     <form class="form-horizontal" ng-submit="$ctrl.signIn()">
       <div class="form-group">
         <label for="inputEmail3" class="control-label">Email</label>
-        <div class="">
+        <div class="signin-email">
           <input ng-model="$ctrl.signingInUser.email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
         </div>
       </div>
       <div class="form-group">
         <label for="inputPassword3" class="control-label">Password</label>
-        <div class="">
+        <div class="signin-password">
           <input ng-model="$ctrl.signingInUser.password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
         </div>
       </div>
       <div class="form-group">
-        <div class="">
-          <p>{{$ctrl.user}}</p>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="">
+        <div class="signin-submit">
           <button type="submit" class="btn">Sign In</button>
         </div>
       </div>
     </form>
   </div>
-
-  <div class="col-sm-4 col-sm-offset-2">
-    <h2 class="">Sign Up</h2>
-    <button class="btn" type="button" name="button" ng-click="$ctrl.setTab(1)">Customer</button>
-    <button class="btn" type="button" name="button" ng-click="$ctrl.setTab(2)">Purveyor</button>
-    <!-- USER SIGN UP -->
+  <div class="signup-wrapper col-sm-6">
+    <div class="signup-buttons col-sm-12">
+      <div class="col-sm-6">
+        <h2>Sign Up</h2>
+      </div>
+      <div class="col-sm-6">
+        <button class="btn" type="button" name="button" ng-click="$ctrl.setTab(1)">Customer</button>
+        <button class="btn" type="button" name="button" ng-click="$ctrl.setTab(2)">Purveyor</button>        
+      </div>
+    </div>
+    <div class="signup-form col-sm-12">
+        <!-- USER SIGN UP -->
     <form class="form-horizontal" ng-if="$ctrl.tab == 1" ng-submit="$ctrl.userSignUp()">
       <div class="form-group">
         <label for="first-name" class="control-label">First Name</label>
@@ -57,12 +60,6 @@
           <input type="password" class="form-control" id="user-password" placeholder="Password" ng-model="$ctrl.user_password">
         </div>
       </div>
-      <!-- <div class="form-group">
-        <label for="user-image" class="control-label">Profile Pic</label>
-        <div class="">
-          <input type="text" class="form-control" placeholder="Image" ng-model="user-image">
-        </div>
-      </div> -->
       <div class="form-group">
         <div class="">
           <button type="submit" class="btn">Sign Up</button>
@@ -101,12 +98,6 @@
           <input type="text" id="location" class="form-control"placeholder="Location" ng-model="$ctrl.location">
         </div>
       </div>
-      <!-- <div class="form-group">
-        <label for="farm_image" class="control-label">Image</label>
-        <div class="">
-          <input type="text" id="farm_image" class="form-control" placeholder="Image" ng-model="$ctrl.farm_image">
-        </div>
-      </div> -->
       <div class="form-group">
         <label for="farm-password" class="control-label">Password</label>
         <div class="">
@@ -128,5 +119,8 @@
         </div>
       </div>
     </form>
+    </div>
   </div>
+</div>
+
 </div>

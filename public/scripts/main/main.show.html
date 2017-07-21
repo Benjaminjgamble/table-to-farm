@@ -1,24 +1,29 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <h2>{{$ctrl.singleProduct.product_name}}</h2>
-    <img src="{{$ctrl.singleProduct.image}}" id="list-image">
-    <h3>{{$ctrl.singleProduct.description}}</h3>
-  </div>
-</div>
-<div class="col-sm-6" ng-repeat="producer in $ctrl.productsProducer">
-  <a ui-sref="/farm/{{producer.farm_id}}">{{producer.farm_name}}</a>
-  <a ui-sref="/markets/{{producer.market_id}}">{{producer.market_name}}</a>
-</div>
-<h4>Comments</h4>
-<div class="comments" ng-repeat="comment in $ctrl.singleProduct.comments">
-  <p>{{comment.first_name}}</p>
-  <p>{{comment.comment}}</p>
-  <p>{{comment.commentCreated}}</p>
-</div>
+<div class="container">
 
-<form class="comment-form" ng-submit="$ctrl.addComment()">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="comment here" ng-model="$ctrl.newComment">
+  <div class="row">
+    <div class="show-one-wrapper col-sm-6">
+      <h2>{{$ctrl.singleProduct.product_name}}</h2>
+      <h3>{{$ctrl.productsProducer[0].farm_name}}</h3>
+      <div class="col-sm-6" ng-repeat="producer in $ctrl.productsProducer">
+        <a ui-sref="/markets/{{producer.market_id}}">{{producer.market_name}}</a>
+      </div>
+      <img src="{{$ctrl.singleProduct.image}}" id="list-image">
+      <h3>{{$ctrl.singleProduct.description}}</h3>      
+    </div>
+    <h4>Comments</h4>
+    <div class="show-one-comments col-sm-6" ng-repeat="comment in $ctrl.singleProduct.comments">
+      <p>{{comment.first_name}}</p>
+      <p>{{comment.comment}}</p>
+      <p>{{comment.commentCreated}}</p>
+    </div>
+    <div class="add-comment-wrapper col-sm-6">
+      <form class="comment-form" ng-submit="$ctrl.addComment()">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="comment here" ng-model="$ctrl.newComment">
+        </div>
+        <button type="submit" name="button">Add a Comment</button>
+      </form>
+    </div>
   </div>
-  <button type="submit" name="button">Add a Comment</button>
-</form>
+
+</div>

@@ -1,41 +1,16 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-6">
-			<table class="table table-hover table-bordered">
-				<thead>
-					<tr>
-						<th>
-							Product
-						</th>
-						<th>
-							Image
-						</th>
-						<th>
-							Description
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat= "product in $ctrl.farmProducts">
-						<td>
-							{{product.product_name}}
-						</td>
-						<td>
-							<img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="thumbnail">
-						</td>
-						<td>
-							{{product.description}}
-						</td>
-						<td>
-							<button type="button" name="button" ng-click="$ctrl.deleteProduct(product)">Delete</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+<div class="container">
 
-		<div class="container col-sm-4">
-			<img id="thumbnail" ng-src="{{$ctrl.image_url}}" alt="image_upload"/>
+	<div class="row">
+		<div class="farm-landing-product-wrapper col-md-6">
+			<div class="each-product col-sm-6" ng-repeat= "product in $ctrl.farmProducts">
+				<p>{{product.product_name}}</p>
+				<img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="thumbnail">
+				<p>{{product.description}}</p>
+				<button type="button" name="button" ng-click="$ctrl.deleteProduct(product)">Delete</button>
+			</div>
+		</div>
+		<div class="edit-wrapper col-sm-4">
+			<img id="added-image" ng-src="{{$ctrl.image_url}}" alt="uploaded image"/>
 			<form ng-submit="$ctrl.postProduct(); $ctrl.getProductsByFarm()">
 				<div class="form-group">
 					<label for="product_image">Upload an Image</label>
@@ -66,4 +41,5 @@
 			</form>
 		</div>
 	</div>
+	
 </div>
