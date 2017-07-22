@@ -56,20 +56,54 @@ header {
 }
 
 #body {
-  background-color: $color-white;
+  background-image: url('../../images/farm landing.jpg');
+  background-color: $color-midblue;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-banner {
+  text-align: center;
+  font-family: $font-main;
+  h3 {
+    font-size: 35px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+.filter-wrapper {
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    text-align: center;
+    font-family: $font-main;
+    font-size: 20px;
+    color: $color-black;
+  .form-inline {
+    display: inline-block;
+  }
+}
+
+.img-wrapper {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
 }
 
 // MAIN PRODUCTS DIV
-#img-wrap {
+.product-img-wrap {
+  margin-top: 10px;
   display: inline-block;
-  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
 
   #list-image {
+    padding: 10px;
     height: 300px;
     width: 300px;
     object-fit: cover;
-    border-radius: 2px;
-    padding: 10px;
+    border-radius: 5%;
   }
 }
 
@@ -79,22 +113,32 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(195, 195, 195, 0.41);
+  background: rgba(255, 255, 255, 0.6);
   color: $color-black;
   visibility: hidden;
   opacity: 0;
   transition: opacity .8s, visibility .8s;
   font-size: 24px;
   text-align: center;
+  padding: 8vh;
+  border-radius: 5%;
+  ul {
+    list-style: none;
+    font-family: $font-marker;
+    p {
+      font-family: $font-main;
+    }
+  }
 }
 
-#img-wrap:hover .img-info {
+
+.img-wrap-wrap:hover .img-info {
   visibility: visible;
   opacity: 1;
 }
 
 #thumbnail {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   object-fit: cover;
 }
