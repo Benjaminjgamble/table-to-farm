@@ -73,6 +73,7 @@ header {
 
 .img-info {
   position: absolute;
+  margin: 20px 8px 25px 25px;
   top: 0;
   bottom: 0;
   left: 0;
@@ -85,7 +86,7 @@ header {
   font-size: 24px;
   text-align: center;
   padding: 8vh;
-  border-radius: 5%; }
+  border-radius: 2%; }
   .img-info ul {
     list-style: none;
     font-family: "Permanent Marker", cursive; }
