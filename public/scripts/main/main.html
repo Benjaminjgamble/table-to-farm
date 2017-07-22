@@ -12,19 +12,19 @@
       <ul id="filtering" class="nav nav-pills">
         <div class="form-inline col-sm-4">
           <select class="form-control" ng-model="$ctrl.farmName" id="sort">
-            <option value="">All Farms</option>
+            <option value="">all farms</option>
             <option ng-repeat="farm in $ctrl.farms" value="{{farm.id}}"><p>{{farm.farm_name}}</p></option>
           </select>
         </div>
         <div class="form-inline col-sm-4">
           <select class="form-control" ng-model="$ctrl.marketName">
-            <option value="">All Markets</option>
+            <option value="">all markets</option>
             <option ng-repeat="market in $ctrl.markets track by $index" value="{{market.id}}">{{market.market_name}}</option>
           </select>
         </div>
         <div class="form-inline col-sm-4">
           <select class="form-control" ng-model="$ctrl.productType" id="sort">
-            <option value="">All Products</option>
+            <option value="">all products</option>
             <option ng-repeat="product in $ctrl.dropDown" value="{{product}}"><p>{{product}}</p></option>
           </select>
         </div>

@@ -108,13 +108,13 @@ header {
 }
 
 .img-info {
+  background-color: rgba(255, 255, 255, 0.45);
   position: absolute;
   margin: 20px 8px 25px 25px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.6);
   color: $color-black;
   visibility: hidden;
   opacity: 0;
@@ -142,4 +142,60 @@ header {
   height: 200px;
   width: 200px;
   object-fit: cover;
+}
+
+#filtering {
+  .form-control {
+    color: $color-black;
+    font-family: $font-main;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, .5);
+    border-style: hidden;
+    border-color: $color-gray;
+    position: relative;
+  }
+  .form-control:visited {
+    border-color: $color-gray;
+  }
+  .form-control:hover {
+    border-color: $color-gray;
+  }
+  .form-control:active {
+    border-color: $color-gray;
+  }
+}
+
+.show-one-product {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  font-family: $font-main;
+  .show-one-wrapper {
+    text-align: center;
+    h2 {
+      font-size: 30px;
+      font-family: $font-marker;
+    }
+  }
+}
+
+.show-one-img {
+  margin-bottom: 20px;
+  #list-image {
+    height: 350px;
+    width: 450px;
+    object-fit: cover;
+  }
+}
+
+.comments {
+  font-family: $font-marker;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.show-one-comments {
+  text-align: center;
+  margin-bottom: 10px;
 }

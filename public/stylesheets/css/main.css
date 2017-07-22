@@ -72,13 +72,13 @@ header {
     border-radius: 5%; }
 
 .img-info {
+  background-color: rgba(255, 255, 255, 0.45);
   position: absolute;
   margin: 20px 8px 25px 25px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.6);
   color: #1F2421;
   visibility: hidden;
   opacity: 0;
@@ -101,3 +101,49 @@ header {
   height: 200px;
   width: 200px;
   object-fit: cover; }
+
+#filtering .form-control {
+  color: #1F2421;
+  font-family: "Bellefair", serif;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-style: hidden;
+  border-color: #AB9B96;
+  position: relative; }
+
+#filtering .form-control:visited {
+  border-color: #AB9B96; }
+
+#filtering .form-control:hover {
+  border-color: #AB9B96; }
+
+#filtering .form-control:active {
+  border-color: #AB9B96; }
+
+.show-one-product {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  font-family: "Bellefair", serif; }
+  .show-one-product .show-one-wrapper {
+    text-align: center; }
+    .show-one-product .show-one-wrapper h2 {
+      font-size: 30px;
+      font-family: "Permanent Marker", cursive; }
+
+.show-one-img {
+  margin-bottom: 20px; }
+  .show-one-img #list-image {
+    height: 350px;
+    width: 450px;
+    object-fit: cover; }
+
+.comments {
+  font-family: "Permanent Marker", cursive;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center; }
+
+.show-one-comments {
+  text-align: center;
+  margin-bottom: 10px; }

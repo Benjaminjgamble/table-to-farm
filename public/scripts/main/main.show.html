@@ -1,16 +1,22 @@
 <div class="container">
 
-  <div class="row">
+  <div class="show-one-product row">
     <div class="show-one-wrapper col-sm-6">
       <h2>{{$ctrl.singleProduct.product_name}}</h2>
-      <h3>{{$ctrl.productsProducer[0].farm_name}}</h3>
-      <div class="col-sm-6" ng-repeat="producer in $ctrl.productsProducer">
-        <a ui-sref="/markets/{{producer.market_id}}">{{producer.market_name}}</a>
+      <div class="col-sm-6">
+        <h3>{{$ctrl.productsProducer[0].farm_name}}</h3>
       </div>
-      <img src="{{$ctrl.singleProduct.image}}" id="list-image">
-      <h3>{{$ctrl.singleProduct.description}}</h3>      
+      <div class="col-sm-6">
+        <h3 ng-repeat="producer in $ctrl.productsProducer"><a ui-sref="/markets/{{producer.market_id}}">{{producer.market_name}}</a></h3>
+      </div>
+      <div class="show-one-img col-sm-10 col-sm-offset-1">
+        <img src="{{$ctrl.singleProduct.image}}" id="list-image">
+      </div>
+      <h3>{{$ctrl.singleProduct.description}}</h3>
     </div>
-    <h4>Comments</h4>
+    <div class="comments col-sm-6">
+      <h3>Comments</h3>
+    </div>
     <div class="show-one-comments col-sm-6" ng-repeat="comment in $ctrl.singleProduct.comments">
       <p>{{comment.first_name}}</p>
       <p>{{comment.comment}}</p>
@@ -21,7 +27,9 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="comment here" ng-model="$ctrl.newComment">
         </div>
-        <button type="submit" name="button">Add a Comment</button>
+        <div class="col-sm-8 col-sm-offset-2">
+          <button type="submit" name="button">Add a Comment</button>
+        </div>
       </form>
     </div>
   </div>
