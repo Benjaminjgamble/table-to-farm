@@ -1,45 +1,47 @@
 <div class="container">
 
 	<div class="row">
-		<div class="farm-landing-product-wrapper col-md-6">
-			<div class="each-product col-sm-6" ng-repeat= "product in $ctrl.farmProducts">
-				<p>{{product.product_name}}</p>
-				<img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="thumbnail">
-				<p>{{product.description}}</p>
-				<button type="button" name="button" ng-click="$ctrl.deleteProduct(product)">Delete</button>
+		<div class="farm-landing col-sm-12">
+			<div class="farm-landing-product-wrapper col-md-6">
+				<div class="each-product col-sm-6" ng-repeat= "product in $ctrl.farmProducts">
+					<h3>{{product.product_name}}</h3>
+					<img ng-click="$ctrl.getSingleProduct(product)" src="{{product.image}}" id="thumbnail">
+					<p>{{product.description}}</p>
+					<button type="button" name="button" ng-click="$ctrl.deleteProduct(product)">Delete</button>
+				</div>
+			</div>
+			<div class="edit-wrapper col-sm-4">
+				<img id="added-image" ng-src="{{$ctrl.image_url}}" alt="uploaded image"/>
+				<form ng-submit="$ctrl.postProduct(); $ctrl.getProductsByFarm()">
+					<div class="form-group">
+						<label for="product_image">Upload an Image</label>
+						<input onchange="angular.element(this).scope().fileNameChanged(this)" type="file" id="image">
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" ng-model="$ctrl.season"> In Season?
+						</label>
+					</div>
+					<div class="form-group">
+						<label for="description">Description</label>
+						<input type="text" class="form-control" id="description" placeholder="Description" ng-model="$ctrl.description">
+					</div>
+					<div class="form-group">
+						<label for="product_name">Product</label>
+						<input type="text" class="form-control" id="product_name" placeholder="Product Name" ng-model="$ctrl.productName">
+					</div>
+					<div class="form-group">
+						<label for="type">Type</label>
+						<input type="text" class="form-control" id="type" placeholder="Product Type" ng-model="$ctrl.type">
+					</div>
+					<div class="form-group">
+						<label for="price">Price</label>
+						<input type="integer" class="form-control" id="price" placeholder="Price" ng-model="$ctrl.price">
+					</div>
+					<button type="submit" class="btn">Submit</button>
+				</form>
 			</div>
 		</div>
-		<div class="edit-wrapper col-sm-4">
-			<img id="added-image" ng-src="{{$ctrl.image_url}}" alt="uploaded image"/>
-			<form ng-submit="$ctrl.postProduct(); $ctrl.getProductsByFarm()">
-				<div class="form-group">
-					<label for="product_image">Upload an Image</label>
-					<input onchange="angular.element(this).scope().fileNameChanged(this)" type="file" id="image">
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" ng-model="$ctrl.season"> In Season?
-					</label>
-				</div>
-				<div class="form-group">
-					<label for="description">Description</label>
-					<input type="text" class="form-control" id="description" placeholder="Description" ng-model="$ctrl.description">
-				</div>
-				<div class="form-group">
-					<label for="product_name">Product</label>
-					<input type="text" class="form-control" id="product_name" placeholder="Product Name" ng-model="$ctrl.productName">
-				</div>
-				<div class="form-group">
-					<label for="type">Type</label>
-					<input type="text" class="form-control" id="type" placeholder="Product Type" ng-model="$ctrl.type">
-				</div>
-				<div class="form-group">
-					<label for="price">Price</label>
-					<input type="integer" class="form-control" id="price" placeholder="Price" ng-model="$ctrl.price">
-				</div>
-				<button type="submit" class="btn">Submit</button>
-			</form>
-		</div>
 	</div>
-	
+
 </div>

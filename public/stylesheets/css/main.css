@@ -142,8 +142,51 @@ header {
   font-family: "Permanent Marker", cursive;
   margin-top: 20px;
   margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px; }
+
+.signin-wrapper {
+  text-align: center;
+  font-family: "Bellefair", serif; }
+
+.signup-wrapper {
+  text-align: center;
+  font-family: "Bellefair", serif; }
+
+.signup-buttons {
   text-align: center; }
 
 .show-one-comments {
   text-align: center;
   margin-bottom: 10px; }
+
+.farm-landing {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+
+.farm-landing-product-wrapper {
+  text-align: center;
+  font-family: "Bellefair", serif; }
+  .farm-landing-product-wrapper p {
+    font-size: 16px; }
+
+#added-image {
+  width: 450px;
+  height: 300px;
+  object-fit: cover; }
+
+.edit-page-wrap {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+
+#medium-img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover; }
+
+.edit-comments {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
