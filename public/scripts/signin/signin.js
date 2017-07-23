@@ -35,13 +35,15 @@
     function signIn () {
       if(!vm.signingInUser.email || !vm.signingInUser.password) {
         window.alert('that shit is bogus')
-      } else if (vm.signingInUser.is_seller) {
-        console.log('signingInUser', vm.signingInUser);
-        signinService.checkUserAuth(vm.signingInUser)
-        $state.go('farm')
       } else {
         signinService.checkUserAuth(vm.signingInUser)
-        $state.go('main')
+        .then((loggedIn) => {
+          if(loggedIn.is_seller) {
+            $state.go('farm')
+          } else {
+            $state.go('main')
+          }
+        })
       }
     }
 

@@ -1,5 +1,6 @@
 (function() {
   'use strict';
+  console.log('inside signinService');
 
   angular.module('app')
   .service('signinService', signinService)
@@ -17,9 +18,10 @@
     }
 
     this.checkUserAuth = (user) => {
-      $http.post('/api/login', user)
+      return $http.post('/api/login', user)
       .then((loggedInUser) => {
         this.loggedInUser = loggedInUser.data
+        console.log('logged in user', this.loggedInUser);
         return this.loggedInUser
       })
     }

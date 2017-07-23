@@ -14,7 +14,7 @@ function login (req, res, next) {
   let user = req.body
   users.login(user)
   .then((returnedUser) => {
-    if(!returnedUser.length) {
+    if (!returnedUser.length) {
       farm.login(user)
       .then((returnedFarmer) => {
         if(!returnedFarmer.length) {

@@ -22,7 +22,7 @@ class Farms {
 
   static login(user) {
     return knex('farms')
-    .where('farm.email', user.email)
+    .where('email', user.email)
   }
 
   static signUp (newFarm) {
