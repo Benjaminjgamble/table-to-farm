@@ -6,12 +6,13 @@
     templateUrl: './scripts/farm/farm.edit.html'
   })
 
-  controller.$inject = ['API_BASE_URL', '$http', '$state', '$scope', 'productsService']
-  function controller (baseUrl, $http, $state, $scope, productsService) {
+  controller.$inject = ['API_BASE_URL', '$http', '$state', '$scope', 'productsService', 'signinService']
+  function controller (baseUrl, $http, $state, $scope, productsService, signinService) {
 
     const vm = this
     vm.$onInit = $onInit
     vm.editProduct = editProduct
+    vm.loggedInUser = signinService.loggedInUser
 
     function $onInit () {
       vm.singleProduct = productsService.singleProduct
@@ -27,7 +28,7 @@
         image: vm.singleProduct.image,
         description: vm.singleProduct.description,
         price: vm.singleProduct.price,
-        farm_id: 1
+        farm_id: vm.loggedInUser.id
       }
 
       $http.patch(`/api/products/:id/edit`, editedProduct)

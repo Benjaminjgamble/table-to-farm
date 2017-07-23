@@ -1,7 +1,6 @@
 (function() {
   'use strict';
-  console.log('inside signinService');
-
+  
   angular.module('app')
   .service('signinService', signinService)
 

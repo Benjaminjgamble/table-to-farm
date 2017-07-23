@@ -1,12 +1,13 @@
 <div class="container">
 
   <div class="row">
-    <div class="markets-img-wrapper col-sm-10 col-sm-offset-1">
-      <img class="market-banner" src="http://seattlefarmersmarkets.org/programs-events/announcements/sponsor-your-neighborhood-farmers-market/@@images/96234f2c-f477-408c-acd5-1c1ca5882b91.jpeg" alt="Seattle Farmers Markets">
+    <div class="markets-img-wrapper col-sm-12">
     </div>
   </div>
-
   <div class="row">
+    <div class="market-wrap">
+
+
     <div class="all-markets col-sm-6" ng-repeat="market in $ctrl.markets">
       <ul>
         <li><h3>{{market.market_name}}</h3></li>
@@ -14,6 +15,7 @@
         <li><p>{{market.dates_open}}</p></li>
         <li><p>{{market.market_location}}</p></li>
       </ul>
+    </div>
     </div>
   </div>
 

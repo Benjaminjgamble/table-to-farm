@@ -6,8 +6,8 @@
     templateUrl: './scripts/farm/farm.landing.html'
   })
 
-  controller.$inject = ['API_BASE_URL', '$http', '$state', '$scope', 'productsService']
-  function controller (baseUrl, $http, $state, $scope, productsService) {
+  controller.$inject = ['API_BASE_URL', '$http', '$state', '$scope', 'productsService', 'signinService']
+  function controller (baseUrl, $http, $state, $scope, productsService, signinService) {
 
     const vm = this
     vm.image_url = 'http://ajaxuploader.com/images/drag-drop-file-upload.png'
@@ -17,6 +17,8 @@
     vm.apiRequest = apiRequest
     vm.getSingleProduct = getSingleProduct
     vm.deleteProduct = deleteProduct
+    vm.loggedInUser = signinService.loggedInUser
+    console.log(vm.loggedInUser.farm_name);
 
     function $onInit () {
       vm.products = productsService.products
@@ -48,7 +50,7 @@
     }
 
     function getProductsByFarm () {
-      $http.get(`/api/farm/1`)
+      $http.get(`/api/farm/${vm.loggedInUser.id}`)
       .then((result) => {
         vm.farmProducts = result.data
       }).catch((err) => {
@@ -64,7 +66,7 @@
         image: vm.image_url,
         description: vm.description,
         price: vm.price,
-        farm_id: 1
+        farm_id: vm.loggedInUser.id
       }
 
       $http.post(`/api/products`, newProduct)

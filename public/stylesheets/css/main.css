@@ -190,3 +190,30 @@ header {
   border-radius: .5%;
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+
+.market-wrap {
+  margin-top: 20vh;
+  box-shadow: 30px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+
+.all-markets {
+  font-family: "Bellefair", serif;
+  text-align: center;
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+  .all-markets ul {
+    list-style: none; }
+
+.farm-img {
+  width: 350px;
+  height: 250px;
+  object-fit: contain; }
+
+.farm-wrap {
+  margin-top: 8vh;
+  text-align: center;
+  font-family: "Bellefair", serif;
+  text-align: center;
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }

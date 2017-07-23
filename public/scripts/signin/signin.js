@@ -24,6 +24,7 @@
     vm.farmSignUp = farmSignUp
     vm.setTab = setTab
     vm.signIn = signIn
+    vm.loggedInUser = this.loggedInUser
 
     function $onInit () {
       vm.tab = 1

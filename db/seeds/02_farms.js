@@ -7,7 +7,7 @@ exports.seed = function(knex) {
         farm_name: 'Nash\'s',
         type: 'farm',
         website: 'http://nashsorganicproduce.com/',
-        farm_image: 'http://nashsorganicproduce.com/images/banners/Banner_Nash.png',
+        farm_image: 'http://1.bp.blogspot.com/-3BOjyVJSaiw/TrMihDdX2II/AAAAAAAADkw/6c1nLLxl4Zw/s1600/IMG_0339.JPG',
         password: 'nashs',
         email: 'nashsfarm@gmail.com',
         location: 'Centralia, WA',

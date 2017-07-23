@@ -1,12 +1,12 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-sm-12" ng-repeat="farms in $ctrl.farmsMarkets">
-      <div class="each-farm col-sm-4">
-        <p>{{farms.farm_name}}</p>
-        <img class="farm-img" src="{{ farms.farm_image }}" alt="">
-        <p>{{farms.location}}</p>
-        <p>{{farms.email}}</p>
+    <div class="farm-wrap col-sm-4" ng-repeat="farm in $ctrl.farms">
+      <div class="each-farm col-sm-12">
+        <h3>{{farm.farm_name}}</h3>
+        <img class="farm-img" src="{{ farm.farm_image }}" alt="">
+        <h4>{{farm.location}}</h4>
+        <h5>{{farm.email}}</h5>
       </div>
     </div>
   </div>
