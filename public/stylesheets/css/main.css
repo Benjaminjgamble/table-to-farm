@@ -1,0 +1,192 @@
+header {
+  margin-top: 5vh;
+  margin-bottom: 10vh; }
+  header a {
+    padding: 5px;
+    cursor: default;
+    font-family: "Bellefair", serif;
+    font-size: 40px;
+    text-decoration: none;
+    color: #1F2421; }
+  header a:visited {
+    text-decoration: none;
+    color: #1F2421; }
+  header a:hover {
+    text-decoration: none;
+    color: #AB9B96; }
+  header a:active {
+    text-decoration: none;
+    color: #AB9B96; }
+  header button {
+    cursor: default; }
+  header ul {
+    display: inline-block;
+    float: right; }
+    header ul li {
+      display: inline-block;
+      padding: 5px; }
+      header ul li .nav-link {
+        font-family: "Bellefair", serif;
+        font-size: 20px;
+        padding: 8px; }
+
+#body {
+  background-image: url("../../images/farm landing.jpg");
+  background-color: #83A0A0;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+.main-banner {
+  text-align: center;
+  font-family: "Bellefair", serif; }
+  .main-banner h3 {
+    font-size: 35px; }
+  .main-banner p {
+    font-size: 18px; }
+
+.filter-wrapper {
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+  text-align: center;
+  font-family: "Bellefair", serif;
+  font-size: 20px;
+  color: #1F2421; }
+  .filter-wrapper .form-inline {
+    display: inline-block; }
+
+.img-wrapper {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+
+.product-img-wrap {
+  margin-top: 10px;
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: 10px; }
+  .product-img-wrap #list-image {
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 5%; }
+
+.img-info {
+  background-color: rgba(255, 255, 255, 0.45);
+  position: absolute;
+  margin: 20px 8px 25px 25px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #1F2421;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .8s, visibility .8s;
+  font-size: 24px;
+  text-align: center;
+  padding: 8vh;
+  border-radius: 2%; }
+  .img-info ul {
+    list-style: none;
+    font-family: "Permanent Marker", cursive; }
+    .img-info ul p {
+      font-family: "Bellefair", serif; }
+
+.img-wrap-wrap:hover .img-info {
+  visibility: visible;
+  opacity: 1; }
+
+#thumbnail {
+  height: 200px;
+  width: 200px;
+  object-fit: cover; }
+
+#filtering .form-control {
+  color: #1F2421;
+  font-family: "Bellefair", serif;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-style: hidden;
+  border-color: #AB9B96;
+  position: relative; }
+
+#filtering .form-control:visited {
+  border-color: #AB9B96; }
+
+#filtering .form-control:hover {
+  border-color: #AB9B96; }
+
+#filtering .form-control:active {
+  border-color: #AB9B96; }
+
+.show-one-product {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  font-family: "Bellefair", serif; }
+  .show-one-product .show-one-wrapper {
+    text-align: center; }
+    .show-one-product .show-one-wrapper h2 {
+      font-size: 30px;
+      font-family: "Permanent Marker", cursive; }
+
+.show-one-img {
+  margin-bottom: 20px; }
+  .show-one-img #list-image {
+    height: 350px;
+    width: 450px;
+    object-fit: cover; }
+
+.comments {
+  font-family: "Permanent Marker", cursive;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px; }
+
+.signin-wrapper {
+  text-align: center;
+  font-family: "Bellefair", serif; }
+
+.signup-wrapper {
+  text-align: center;
+  font-family: "Bellefair", serif; }
+
+.signup-buttons {
+  text-align: center; }
+
+.show-one-comments {
+  text-align: center;
+  margin-bottom: 10px; }
+
+.farm-landing {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+
+.farm-landing-product-wrapper {
+  text-align: center;
+  font-family: "Bellefair", serif; }
+  .farm-landing-product-wrapper p {
+    font-size: 16px; }
+
+#added-image {
+  width: 450px;
+  height: 300px;
+  object-fit: cover; }
+
+.edit-page-wrap {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+
+#medium-img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover; }
+
+.edit-comments {
+  border-radius: .5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }

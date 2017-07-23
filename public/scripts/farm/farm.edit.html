@@ -1,43 +1,49 @@
 <div class="container">
 
   <div class="row">
-    <div class="edit-img col-sm-6">
-      <img id="medium-img" ng-src="{{$ctrl.singleProduct.image}}" alt="{{$ctrl.singleProduct.type}}"/>
+    <div class="edit-page-wrap col-sm-12">
+      <div class="edit-img col-sm-6">
+        <img id="medium-img" ng-src="{{$ctrl.singleProduct.image}}" alt="{{$ctrl.singleProduct.type}}"/>
+      </div>
+      <div class="edit-wrapper col-sm-6">
+        <form class="edit-form" ng-submit="$ctrl.editProduct(); $ctrl.getProductsByFarm()">
+          <div class="form-group">
+            <label for="product_image">Upload an Image</label>
+            <input onchange="angular.element(this).scope().fileNameChanged(this)" type="file" id="image">
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-model="$ctrl.singleProduct.in_season"> In Season?
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" ng-model="$ctrl.singleProduct.description">
+          </div>
+          <div class="form-group">
+            <label for="product_name">Product</label>
+            <input type="text" class="form-control" id="product_name" ng-model="$ctrl.singleProduct.product_name">
+          </div>
+          <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" class="form-control" id="type" ng-model="$ctrl.singleProduct.type">
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="integer" class="form-control" id="price" ng-model="$ctrl.singleProduct.price">
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
     </div>
-    <div class="edit-comments" ng-repeat="comment in $ctrl.comments">
-      <p>{{comment.comment}}</p>
-      <p>{{comment.commentCreated}}</p>
-      <p>{{comment.first_name}}</p>
-    </div>
-    <div class="edit-wrapper col-sm-6">
-      <form class="edit-form" ng-submit="$ctrl.editProduct(); $ctrl.getProductsByFarm()">
-        <div class="form-group">
-          <label for="product_image">Upload an Image</label>
-          <input onchange="angular.element(this).scope().fileNameChanged(this)" type="file" id="image">
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" ng-model="$ctrl.singleProduct.in_season"> In Season?
-          </label>
-        </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <input type="text" class="form-control" id="description" ng-model="$ctrl.singleProduct.description">
-        </div>
-        <div class="form-group">
-          <label for="product_name">Product</label>
-          <input type="text" class="form-control" id="product_name" ng-model="$ctrl.singleProduct.product_name">
-        </div>
-        <div class="form-group">
-          <label for="type">Type</label>
-          <input type="text" class="form-control" id="type" ng-model="$ctrl.singleProduct.type">
-        </div>
-        <div class="form-group">
-          <label for="price">Price</label>
-          <input type="integer" class="form-control" id="price" ng-model="$ctrl.singleProduct.price">
-        </div>
-        <button type="submit" class="btn">Submit</button>
-      </form>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="edit-comments" ng-repeat="comment in $ctrl.comments">
+        <p>{{comment.comment}}</p>
+        <p>{{comment.commentCreated}}</p>
+        <p>{{comment.first_name}}</p>
+      </div>
     </div>
   </div>
 

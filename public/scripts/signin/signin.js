@@ -37,7 +37,13 @@
         window.alert('that shit is bogus')
       } else {
         signinService.checkUserAuth(vm.signingInUser)
-        $state.go('main')
+        .then((loggedIn) => {
+          if(loggedIn.is_seller) {
+            $state.go('farm')
+          } else {
+            $state.go('main')
+          }
+        })
       }
     }
 
