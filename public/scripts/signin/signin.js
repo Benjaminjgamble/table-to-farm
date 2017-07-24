@@ -35,7 +35,7 @@
 
     function signIn () {
       if(!vm.signingInUser.email || !vm.signingInUser.password) {
-        window.alert('that shit is bogus')
+        window.alert('Please provide a username and password.')
       } else {
         signinService.checkUserAuth(vm.signingInUser)
         .then((loggedIn) => {
@@ -88,7 +88,7 @@
             user = el
             console.log(`Welcome ${el.first_name}!`);
             vm.user = el
-            console.log(vm.user);
+            console.log('user', vm.user);
             $state.go('main')
           }
         })
@@ -103,6 +103,7 @@
         if(farm.email === email && farm.password === password) {
           vm.farmId = farm.id
           vm.farm = farm
+          console.log('farm', vm.farm);
           $state.go('farm')
         }
       })

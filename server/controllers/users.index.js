@@ -27,6 +27,7 @@ function login (req, res, next) {
       })
     }
       if(returnedUser[0].password === user.password) {
+        console.log(returnedUser[0].password);
         delete returnedUser[0].password
         res.json(returnedUser[0])
       }

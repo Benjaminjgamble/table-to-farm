@@ -73,6 +73,10 @@ header {
   }
 }
 
+.hover-info {
+  margin-top: 6vh;
+}
+
 .filter-wrapper {
     margin-top: 5vh;
     margin-bottom: 3vh;
@@ -99,7 +103,12 @@ header {
 
   #list-image {
     border-radius: 5%;
+    width: 100%;
   }
+}
+
+#show-one-image {
+  width: 100%;
 }
 
 #image {

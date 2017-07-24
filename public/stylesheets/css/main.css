@@ -44,6 +44,9 @@ header {
   .main-banner p {
     font-size: 18px; }
 
+.hover-info {
+  margin-top: 6vh; }
+
 .filter-wrapper {
   margin-top: 5vh;
   margin-bottom: 3vh;
@@ -64,7 +67,11 @@ header {
   display: inline-block;
   margin-bottom: 10px; }
   .product-img-wrap #list-image {
-    border-radius: 5%; }
+    border-radius: 5%;
+    width: 100%; }
+
+#show-one-image {
+  width: 100%; }
 
 #image {
   display: none; }

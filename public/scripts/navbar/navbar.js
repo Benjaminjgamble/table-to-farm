@@ -1,0 +1,26 @@
+(function(){
+
+  angular.module('app')
+  .component('navbar', {
+    controller: controller,
+    templateUrl: './scripts/navbar/navbar.html'
+  })
+
+  controller.$inject = ['API_BASE_URL', '$http', '$state', 'productsService', 'signinService']
+  function controller (baseUrl, $http, $state, productsService, signinService){
+    const vm = this
+    vm.$onInit = $onInit
+    vm.userOrFarmer = userOrFarmer
+
+    function $onInit () {
+    }
+
+    function userOrFarmer () {
+      signinService.userAuth()
+      .then((user) => {
+        console.log('user', user);
+      })
+    }
+
+  }
+})()

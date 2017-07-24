@@ -21,28 +21,7 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <body id="body">
-  <div class="container">
-
-    <div class="row">
-      <div class="col-sm-12">
-        <header class="navbar">
-          <a class="nav-logo" href="/">ingather</a>
-          <ul class="head-ul">
-            <!-- <li><a href="/main">/main</a></li>
-            <li><a href="/markets/:id">/markets/:id</a></li>
-            <li><a href="/farm">/farm</a></li>
-            <li><a href="/farm/:id">/farm/:id</a></li>
-            <li><a href="/farm/:id/edit">/farm/:id/edit</a></li>
-            <li><a href="/products">/products</a></li> -->
-            <li><a class="nav-link" ui-sref="farms">Farms</a></li>
-            <li><a class="nav-link" ui-sref="markets">Markets</a></li>
-            <li><a class="nav-link" ui-sref="signin">Sign In</a></li>
-          </ul>
-        </header>
-      </div>
-    </div>
-
-  </div>
+  <navbar></navbar>
 <!-- APPROPRIATE VIEW IS RENDERED HERE -->
   <ui-view></ui-view>
 
@@ -70,5 +49,6 @@
   <script src="./scripts/farm/farm.edit.js"></script>
   <script src="./scripts/main/farms.index.js"></script>
   <script src="./scripts/main/markets.index.js"></script>
+  <script src="./scripts/navbar/navbar.js"></script>
 </body>
 </html>
