@@ -18,7 +18,7 @@
     vm.getSingleProduct = getSingleProduct
     vm.deleteProduct = deleteProduct
     vm.loggedInUser = signinService.loggedInUser
-    console.log(vm.loggedInUser.farm_name);
+    vm.fileUploadImage = fileUploadImage
 
     function $onInit () {
       vm.products = productsService.products
@@ -27,12 +27,15 @@
 
     function getSingleProduct (product) {
       let id = product.id
-      console.log('product', product, 'id', id);
       productsService.getProductById(id)
       .then(() => {
         vm.singleProduct = productsService.singleProduct
         $state.go('editproduct', { id })
       })
+    }
+
+    function fileUploadImage () {
+      angular.element('#image').click()
     }
 
     function deleteProduct (product) {

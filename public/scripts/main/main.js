@@ -12,6 +12,7 @@
     vm.$onInit = $onInit
     vm.getSingleProduct = getSingleProduct
     vm.dropFilter = dropFilter
+    vm.croppedImageUrl = croppedImageUrl
 
     function $onInit () {
       vm.dropDown = []
@@ -53,6 +54,10 @@
         console.error(err)
       })
 
+    }
+
+    function croppedImageUrl(prodUrl) {
+      return prodUrl.replace(/(upload\/)/, 'upload/c_crop,g_center,h_300,w_300/')
     }
 
     function dropFilter() {

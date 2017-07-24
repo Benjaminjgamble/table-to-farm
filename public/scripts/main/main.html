@@ -36,11 +36,12 @@
     <div class="img-wrapper col-sm-10 col-sm-offset-1">
       <div class="col-sm-4 img-wrap-wrap" ng-repeat="product in $ctrl.products | orderBy:$ctrl.sortBy | filter:{farm_id:$ctrl.farmName} | filter:{type:$ctrl.productType} | filter:{market_id:$ctrl.marketName}">
         <div class="product-img-wrap">
-          <img id="list-image" src="{{product.image}}">
+          <img id="list-image" src="{{$ctrl.croppedImageUrl(product.image)}}">
         </div>
         <div class="img-info" ng-click="$ctrl.getSingleProduct(product)">
           <ul>
             <li><h2>{{product.product_name}}</h2></li>
+            <li><h4>${{product.price}}</h4></li>
             <li><p>more info...</p></li>
           </ul>
         </div>

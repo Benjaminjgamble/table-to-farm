@@ -13,6 +13,7 @@
     vm.$onInit = $onInit
     vm.editProduct = editProduct
     vm.loggedInUser = signinService.loggedInUser
+    console.log('logged in user:', vm.loggedInUser);
 
     function $onInit () {
       vm.singleProduct = productsService.singleProduct

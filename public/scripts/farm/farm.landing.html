@@ -15,7 +15,7 @@
 				</div>
 			</div>
 			<div class="edit-wrapper col-sm-4">
-				<img id="added-image" ng-src="{{$ctrl.image_url}}" alt="uploaded image"/>
+				<img id="added-image" ng-click="$ctrl.fileUploadImage()" ng-src="{{$ctrl.image_url}}" alt="uploaded image"/>
 				<form ng-submit="$ctrl.postProduct(); $ctrl.getProductsByFarm()">
 					<div class="form-group">
 						<label for="product_image">Upload an Image</label>

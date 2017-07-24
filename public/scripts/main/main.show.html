@@ -10,6 +10,7 @@
         <h3 ng-repeat="producer in $ctrl.productsProducer"><a ui-sref="markets">{{producer.market_name}}</a></h3>
       </div>
       <div class="show-one-img col-sm-10 col-sm-offset-1">
+        <h3>${{$ctrl.singleProduct.price}}</h3>
         <img src="{{$ctrl.singleProduct.image}}" id="list-image">
       </div>
       <h3>{{$ctrl.singleProduct.description}}</h3>

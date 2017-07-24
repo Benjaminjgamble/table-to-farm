@@ -62,19 +62,16 @@ header {
 .product-img-wrap {
   margin-top: 10px;
   display: inline-block;
-  overflow: hidden;
   margin-bottom: 10px; }
   .product-img-wrap #list-image {
-    padding: 10px;
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
     border-radius: 5%; }
+
+#image {
+  display: none; }
 
 .img-info {
   background-color: rgba(255, 255, 255, 0.45);
   position: absolute;
-  margin: 20px 8px 25px 25px;
   top: 0;
   bottom: 0;
   left: 0;
@@ -85,7 +82,6 @@ header {
   transition: opacity .8s, visibility .8s;
   font-size: 24px;
   text-align: center;
-  padding: 8vh;
   border-radius: 2%; }
   .img-info ul {
     list-style: none;
@@ -148,10 +144,14 @@ header {
 .signin-wrapper {
   text-align: center;
   font-family: "Bellefair", serif; }
+  .signin-wrapper .control-label {
+    font-weight: 400; }
 
 .signup-wrapper {
   text-align: center;
   font-family: "Bellefair", serif; }
+  .signup-wrapper .control-label {
+    font-weight: 400; }
 
 .signup-buttons {
   text-align: center; }
