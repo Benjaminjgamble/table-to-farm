@@ -13,11 +13,13 @@
     vm.userOrFarmer = userOrFarmer
 
     function $onInit () {
+      vm.toggle = true
     }
 
     function userOrFarmer () {
       if(signinService.loggedInUser != undefined) {
         if(signinService.loggedInUser.is_seller) {
+          console.log(vm.toggle);
           $state.go('farm')
         } else {
           $state.go('main')

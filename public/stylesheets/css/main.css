@@ -40,6 +40,11 @@ header {
   background-color: #83A0A0;
   background-repeat: no-repeat;
   background-attachment: fixed; }
+  #body button {
+    background-color: #F6FFF8;
+    border-color: #9FB8AD;
+    border-style: ridge;
+    color: #83A0A0; }
 
 .main-banner {
   text-align: center;
@@ -57,10 +62,12 @@ header {
   margin-bottom: 3vh;
   text-align: center;
   font-family: "Bellefair", serif;
-  font-size: 20px;
-  color: #1F2421; }
+  font-size: 20px; }
   .filter-wrapper .form-inline {
     display: inline-block; }
+
+.form-control #sort {
+  color: #83A0A0; }
 
 .img-wrapper {
   border-radius: .5%;
@@ -184,9 +191,7 @@ header {
     font-size: 16px; }
 
 #added-image {
-  width: 450px;
-  height: 300px;
-  object-fit: cover; }
+  width: 100%; }
 
 .edit-page-wrap {
   border-radius: .5%;
@@ -194,9 +199,7 @@ header {
   box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
 
 #medium-img {
-  width: 500px;
-  height: 350px;
-  object-fit: cover; }
+  width: 100%; }
 
 .edit-comments {
   border-radius: .5%;
@@ -229,3 +232,12 @@ header {
   border-radius: .5%;
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+
+.edit-wrapper {
+  font-family: "Bellefair", serif;
+  text-align: center; }
+  .edit-wrapper label {
+    font-weight: 400; }
+
+.add-comment-wrapper {
+  width: 100%; }

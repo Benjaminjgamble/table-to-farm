@@ -14,11 +14,11 @@
 					<button type="button" name="button" ng-click="$ctrl.deleteProduct(product)">Delete</button>
 				</div>
 			</div>
-			<div class="edit-wrapper col-sm-4">
+			<div class="edit-wrapper col-sm-4 col-sm-offset-1">
+				<h3>Upload an Image</h3> 
 				<img id="added-image" ng-click="$ctrl.fileUploadImage()" ng-src="{{$ctrl.image_url}}" alt="uploaded image"/>
 				<form ng-submit="$ctrl.postProduct(); $ctrl.getProductsByFarm()">
 					<div class="form-group">
-						<label for="product_image">Upload an Image</label>
 						<input onchange="angular.element(this).scope().fileNameChanged(this)" type="file" id="image">
 					</div>
 					<div class="checkbox">

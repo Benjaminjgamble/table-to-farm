@@ -31,6 +31,8 @@ function login (req, res, next) {
         delete returnedUser[0].password
         res.json(returnedUser[0])
       }
+  }).catch((err) => {
+    console.log(err);
   })
 }
 

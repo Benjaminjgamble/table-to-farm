@@ -13,7 +13,8 @@
           <li><a href="/products">/products</a></li> -->
           <li><a class="nav-link" ui-sref="farms">Farms</a></li>
           <li><a class="nav-link" ui-sref="markets">Markets</a></li>
-          <li><a class="nav-link" ui-sref="signin">Sign In</a></li>
+          <li ng-if="$ctrl.toggle == true"><a class="nav-link" ui-sref="signin">Sign In</a></li>
+          <li ng-if="$ctrl.toggle == false"><a class="nav-link" ui-sref="main">Sign Out</a></li>
         </ul>
       </header>
     </div>

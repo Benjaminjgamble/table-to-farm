@@ -66,6 +66,12 @@ header {
   background-color: $color-midblue;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  button {
+    background-color: $color-white;
+    border-color: $color-lightblue;
+    border-style: ridge;
+    color: $color-midblue;
+  }
 }
 
 .main-banner {
@@ -89,9 +95,15 @@ header {
     text-align: center;
     font-family: $font-main;
     font-size: 20px;
-    color: $color-black;
+
   .form-inline {
     display: inline-block;
+  }
+}
+
+.form-control {
+  #sort {
+    color: $color-midblue;
   }
 }
 
@@ -248,9 +260,7 @@ header {
 }
 
 #added-image {
-  width: 450px;
-  height: 300px;
-  object-fit: cover;
+  width: 100%;
 }
 
 .edit-page-wrap {
@@ -260,9 +270,7 @@ header {
 }
 
 #medium-img {
-  width: 500px;
-  height: 350px;
-  object-fit: cover;
+  width: 100%;
 }
 
 .edit-comments {
@@ -301,4 +309,16 @@ header {
   border-radius: .5%;
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+}
+
+.edit-wrapper {
+  label {
+    font-weight: 400;
+  }
+  font-family: $font-main;
+  text-align: center;
+}
+
+.add-comment-wrapper {
+  width: 100%;
 }
