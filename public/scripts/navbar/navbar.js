@@ -16,10 +16,15 @@
     }
 
     function userOrFarmer () {
-      signinService.userAuth()
-      .then((user) => {
-        console.log('user', user);
-      })
+      if(signinService.loggedInUser != undefined) {
+        if(signinService.loggedInUser.is_seller) {
+          $state.go('farm')
+        } else {
+          $state.go('main')
+        }
+      } else {
+        $state.go('main')
+      }
     }
 
   }

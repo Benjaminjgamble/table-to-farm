@@ -55,6 +55,12 @@ header {
   }
 }
 
+.welcome-wrap {
+  font-size: 50px;
+  font-family: $font-main;
+  text-align: center;
+}
+
 #body {
   background-image: url('../../images/farm landing.jpg');
   background-color: $color-midblue;

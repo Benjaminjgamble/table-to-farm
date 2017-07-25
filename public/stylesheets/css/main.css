@@ -30,6 +30,11 @@ header {
         font-size: 20px;
         padding: 8px; }
 
+.welcome-wrap {
+  font-size: 50px;
+  font-family: "Bellefair", serif;
+  text-align: center; }
+
 #body {
   background-image: url("../../images/farm landing.jpg");
   background-color: #83A0A0;
