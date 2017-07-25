@@ -19,9 +19,9 @@
       <h3>Comments</h3>
     </div>
     <div class="show-one-comments col-sm-6" ng-repeat="comment in $ctrl.singleProduct.comments">
-      <p>{{comment.first_name}}</p>
+      <p class="name">{{comment.first_name}}</p>
       <p>{{comment.comment}}</p>
-      <p>{{comment.commentCreated}}</p>
+      <p class="name">{{comment.commentCreated}}</p>
     </div>
     <div class="add-comment-wrapper col-sm-6">
       <form class="comment-form" ng-submit="$ctrl.addComment()">

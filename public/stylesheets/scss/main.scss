@@ -13,6 +13,10 @@ $font-purveyor: 'Lora', serif;
 $font-cursive: 'Abril Fatface', cursive;
 $font-marker: 'Permanent Marker', cursive;
 
+.container {
+  background-color: rgba(255, 255, 255, .5);
+}
+
 // NAVBAR
 header {
   margin-top: 5vh;
@@ -109,8 +113,6 @@ header {
 
 .img-wrapper {
   border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
 }
 
 // MAIN PRODUCTS DIV
@@ -173,7 +175,7 @@ header {
     color: $color-black;
     font-family: $font-main;
     font-size: 18px;
-    background-color: rgba(255, 255, 255, .5);
+    // background-color: rgba(255, 255, 255, .5);
     border-style: hidden;
     border-color: $color-gray;
     position: relative;
@@ -191,8 +193,8 @@ header {
 
 .show-one-product {
   border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  // background-color: rgba(255, 255, 255, 0.2);
+  // box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
   font-family: $font-main;
   .show-one-wrapper {
     text-align: center;
@@ -228,6 +230,13 @@ header {
   }
 }
 
+.show-one-comments {
+  font-size: 18px;
+  .name {
+    font-size: 20px;
+  }
+}
+
 .signup-wrapper {
   text-align: center;
   font-family: $font-main;
@@ -247,8 +256,8 @@ header {
 
 .farm-landing {
   border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  // background-color: rgba(255, 255, 255, 0.2);
+  // box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
 }
 
 .farm-landing-product-wrapper {
@@ -265,8 +274,8 @@ header {
 
 .edit-page-wrap {
   border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  // background-color: rgba(255, 255, 255, 0.2);
+  // box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
 }
 
 #medium-img {
@@ -275,21 +284,21 @@ header {
 
 .edit-comments {
   border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  // background-color: rgba(255, 255, 255, 0.2);
+  // box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
 }
 
 .market-wrap {
   margin-top: 20vh;
-  box-shadow: 30px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  // box-shadow: 30px 2px 2px 1px rgba(255, 255, 255, 0.1);
 }
 
 .all-markets {
   font-family: $font-main;
   text-align: center;
   border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  // background-color: rgba(255, 255, 255, 0.2);
+  // box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
   ul {
     list-style: none;
   }
@@ -307,8 +316,8 @@ header {
   font-family: $font-main;
   text-align: center;
   border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
+  // background-color: rgba(255, 255, 255, 0.2);
+  // box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
 }
 
 .edit-wrapper {

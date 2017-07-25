@@ -1,3 +1,6 @@
+.container {
+  background-color: rgba(255, 255, 255, 0.5); }
+
 header {
   margin-top: 5vh;
   margin-bottom: 10vh; }
@@ -70,9 +73,7 @@ header {
   color: #83A0A0; }
 
 .img-wrapper {
-  border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+  border-radius: .5%; }
 
 .product-img-wrap {
   margin-top: 10px;
@@ -121,7 +122,6 @@ header {
   color: #1F2421;
   font-family: "Bellefair", serif;
   font-size: 18px;
-  background-color: rgba(255, 255, 255, 0.5);
   border-style: hidden;
   border-color: #AB9B96;
   position: relative; }
@@ -137,8 +137,6 @@ header {
 
 .show-one-product {
   border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1);
   font-family: "Bellefair", serif; }
   .show-one-product .show-one-wrapper {
     text-align: center; }
@@ -166,6 +164,11 @@ header {
   .signin-wrapper .control-label {
     font-weight: 400; }
 
+.show-one-comments {
+  font-size: 18px; }
+  .show-one-comments .name {
+    font-size: 20px; }
+
 .signup-wrapper {
   text-align: center;
   font-family: "Bellefair", serif; }
@@ -180,9 +183,7 @@ header {
   margin-bottom: 10px; }
 
 .farm-landing {
-  border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+  border-radius: .5%; }
 
 .farm-landing-product-wrapper {
   text-align: center;
@@ -194,28 +195,21 @@ header {
   width: 100%; }
 
 .edit-page-wrap {
-  border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+  border-radius: .5%; }
 
 #medium-img {
   width: 100%; }
 
 .edit-comments {
-  border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+  border-radius: .5%; }
 
 .market-wrap {
-  margin-top: 20vh;
-  box-shadow: 30px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+  margin-top: 20vh; }
 
 .all-markets {
   font-family: "Bellefair", serif;
   text-align: center;
-  border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+  border-radius: .5%; }
   .all-markets ul {
     list-style: none; }
 
@@ -229,9 +223,7 @@ header {
   text-align: center;
   font-family: "Bellefair", serif;
   text-align: center;
-  border-radius: .5%;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.1); }
+  border-radius: .5%; }
 
 .edit-wrapper {
   font-family: "Bellefair", serif;
