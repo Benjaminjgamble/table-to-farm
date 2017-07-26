@@ -7,7 +7,7 @@ Ingather is a web app that allows consumers to see a live feed of the current pr
 Using NPM
 - git clone the project repository
 - npm install all dependencies
--
+- 
 
 ### Prerequisites
 
